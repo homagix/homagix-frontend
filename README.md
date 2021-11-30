@@ -1,11 +1,30 @@
-# Vue 3 + Typescript + Vite
+# Homagix frontend
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Food shopping isn't fun. Especially if you have children and need or want to cook every day and those children aren't very interested in experimenting with new dishes. So, sonner or later, you will do the same few dishes again and again. I don't like this.
 
-## Recommended IDE Setup
+Sometimes, we _find_ some new dishes which are accepted by the children. I want to remember these. Unless then, I want to use all known dishes in a way that variety is maximized.
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+To do this in a more digital way, we created this repository to remember dishes, get more variety as well as simplify food shopping by having a list of ingredients which are needed for the dishes.
 
-## Type Support For `.vue` Imports in TS
+## Program parts
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+This is the frontend part of Homagix. It is most likely that you want to clone [the server part](https://github.com/jschirrmacher/homagix-server) as well.
+
+## Adding recipes
+
+Dishes are stored in [the server](https://github.com/jschirrmacher/homagix-server/README.md#Adding).
+
+## Install and run
+
+    git clone https://github.com/jschirrmacher/homagix-frontend.git
+    npm install --production
+    npm build
+    npm start
+    open http://localhost:3000/
+
+### developmen version
+
+If you want to install a development version, use the following npm commands after cloning instead:
+
+    npm install
+    npm run dev
