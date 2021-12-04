@@ -27,9 +27,19 @@ function clearError() {
 
   <div class="content">
     <router-view></router-view>
+    <o-button rounded variant="primary">Test</o-button>
+    <o-autocomplete
+        rounded
+        :data="['test1','Autocomplete','Me']"
+        placeholder="Autocomplete"
+        icon="search"
+        clearable
+    >
+      <template #empty>No results found</template>
+    </o-autocomplete>
   </div>
 
-  <!-- 
+  <!--
   <Alert />
   <LoginDialog />
   <LostPasswordDialog />

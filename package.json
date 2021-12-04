@@ -16,6 +16,8 @@
     "npm": ">=6.0.0"
   },
   "dependencies": {
+    "@oruga-ui/oruga-next": "0.4.8",
+    "@oruga-ui/theme-bulma": "0.1.5",
     "vue": "3.2.31"
   },
   "devDependencies": {
