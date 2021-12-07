@@ -4,12 +4,10 @@ import { useStore } from "vuex"
 import { ActionType } from "./store"
 
 const store = useStore()
-const error = computed(() => {
-  return store?.state.error
-})
+const error = computed(() => store?.state.error)
 
 function clearError() {
-  store.commit(ActionType.CLEAR_ERROR)
+  store.dispatch(ActionType.CLEAR_ERROR)
 }
 </script>
 

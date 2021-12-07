@@ -7,4 +7,12 @@ export default defineConfig({
   // build: {
   //   manifest: true,
   // },
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:8200",
+        timeout: 1000,
+      },
+    },
+  },
 })

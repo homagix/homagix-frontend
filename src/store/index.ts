@@ -9,11 +9,12 @@ import {
 import mutations from "./mutations"
 import actions from "./actions"
 import getters from "./getters"
-import { AppError } from "../types"
+import { AppError, Dish } from "../types"
 import { InjectionKey } from "vue"
 
 const state = {
   error: null as AppError | null,
+  dishes: [] as Dish[],
 }
 
 const store = createStore({
