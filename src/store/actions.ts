@@ -1,5 +1,5 @@
 import { Context, MutationType, ActionType } from "."
-import { AppError } from "./../types"
+import { AppError } from "@/types"
 
 export default {
   ERROR_OCCURED(context: Context, error: AppError) {

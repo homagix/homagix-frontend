@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue"
 import { useStore } from "vuex"
-import { ActionType } from "./store"
+import { ActionType } from "@/store"
 
 const store = useStore()
 const error = computed(() => store?.state.error)
@@ -34,7 +34,7 @@ function clearError() {
   -->
 </template>
 
-<style>
+<style lang="scss">
 html,
 body {
   font-family: Arial, Helvetica, sans-serif;

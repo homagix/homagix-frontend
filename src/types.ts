@@ -15,4 +15,5 @@ export type Dish = {
   source?: string
   last?: string
   items: Item[]
+  alwaysOnList: boolean
 }

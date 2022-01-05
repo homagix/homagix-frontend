@@ -1,3 +1,4 @@
+import path from "path"
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
 
@@ -7,6 +8,11 @@ export default defineConfig({
   // build: {
   //   manifest: true,
   // },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
   server: {
     proxy: {
       "/api": {

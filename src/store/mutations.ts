@@ -1,5 +1,5 @@
-import { State } from "."
-import { AppError, Dish } from "../types"
+import { State } from "@/store"
+import { AppError, Dish } from "@/types"
 
 export default {
   SET_ERROR(state: State, error: AppError | null): void {

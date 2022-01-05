@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router"
-import RecipesList from "./components/RecipesList.vue"
+import RecipesList from "@/components/RecipesList.vue"
 
 export default createRouter({
   history: createWebHistory(),

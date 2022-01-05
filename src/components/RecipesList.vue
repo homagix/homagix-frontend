@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { computed } from "vue"
 import { useStore } from "vuex"
-import { Dish } from "../types"
-import { ActionType } from "../store"
+import { Dish } from "@/types"
+import { ActionType, Store } from "@/store"
 
-const store = useStore()
+const store: Store = useStore()
 const dishes = computed(() => store.state.dishes)
 
 const sortedDishes = computed(() => {
-  const filteredDishes = dishes.value.filter((d: { alwaysOnList: boolean; name: string }) => !d.alwaysOnList)
+  const filteredDishes = dishes.value.filter((d) => !d.alwaysOnList)
   return filteredDishes.sort((d1, d2) => d1.name.localeCompare(d2.name)) as Dish[]
 })
 
