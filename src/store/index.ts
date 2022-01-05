@@ -6,10 +6,10 @@ import {
   DispatchOptions,
   ActionContext,
 } from "vuex"
-import mutations from "./mutations"
-import actions from "./actions"
-import getters from "./getters"
-import { AppError, Dish } from "../types"
+import mutations from "@/store/mutations"
+import actions from "@/store/actions"
+import getters from "@/store/getters"
+import { AppError, Dish } from "@/types"
 import { InjectionKey } from "vue"
 
 const state = {

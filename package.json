@@ -8,10 +8,15 @@
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
   },
+  "engines": {
+    "node": ">=16.0.0 && <17.0.0",
+    "npm": ">=6.0.0"
+  },
   "dependencies": {
     "vue": "^3.2.16"
   },
   "devDependencies": {
+    "@types/node": "^16.11.19",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@vitejs/plugin-vue": "^1.9.3",
     "esbuild": "0.13.4",
@@ -24,5 +29,10 @@
     "vue-router": "^4.0.12",
     "vue-tsc": "^0.3.0",
     "vuex": "^4.0.2"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1",
+    },
   }
 }
