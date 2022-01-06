@@ -1,5 +1,16 @@
-import { Context, MutationType, ActionType } from "."
+import { Context, MutationType, ActionType } from "@/store"
+import { loadDishes } from "@/api/dishes"
 import { AppError } from "@/types"
+
+function catchErrors(func: (context: Context, ...args: unknown[]) => void | Promise<void>, message: string) {
+  return async (context: Context, ...args: unknown[]) => {
+    try {
+      await func(context, ...args)
+    } catch (details) {
+      context.dispatch(ActionType.ERROR_OCCURED, { message, details })
+    }
+  }
+}
 
 export default {
   ERROR_OCCURED(context: Context, error: AppError) {
@@ -10,18 +21,8 @@ export default {
     context.commit(MutationType.SET_ERROR, null)
   },
 
-  async LOAD_DISHES(context: Context) {
-    try {
-      const response = await fetch("/api/dishes")
-      const data = response.headers.get("content-type")?.match(/json/) ? await response.json() : await response.text()
-      if (!response.ok) {
-        throw { message: response.status + " " + response.statusText, details: data }
-      }
-      context.commit(MutationType.LOADED_DISHES, data)
-    } catch (error) {
-      console.error(error)
-      const message = "Rezepte konnten nicht geladen werden"
-      context.dispatch(ActionType.ERROR_OCCURED, { message, details: error })
-    }
-  },
+  LOAD_DISHES: catchErrors(
+    async context => context.commit(MutationType.LOADED_DISHES, await loadDishes()),
+    "Rezepte konnten nicht geladen werden"
+  ),
 }
