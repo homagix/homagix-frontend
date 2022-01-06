@@ -6,7 +6,8 @@
     "lint": "eslint src/**/*.ts",
     "test": "vite test",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "postinstall": "msw init public --save"
   },
   "engines": {
     "node": ">=16.0.0 <17.0.0",

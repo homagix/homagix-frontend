@@ -29,3 +29,5 @@ node_modules/
 
 # local dotenv environment variables file
 .env*.local
+
+public/mockServiceWorker.js
