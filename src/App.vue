@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { computed } from "vue"
-import { useStore } from "vuex"
-import { ActionType } from "@/store"
+import { ActionType, useStore } from "@/store"
 
 const store = useStore()
 const error = computed(() => store?.state.error)
+
+store.dispatch(ActionType.LOAD_DISHES)
 
 function clearError() {
   store.dispatch(ActionType.CLEAR_ERROR)

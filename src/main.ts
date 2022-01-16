@@ -1,6 +1,6 @@
 import { createApp } from "vue"
 import App from "@/App.vue"
-import store from "@/store"
+import store, { key } from "@/store"
 import router from "@/router"
 
 if (import.meta.env.MODE === "development") {
@@ -12,4 +12,4 @@ if (import.meta.env.MODE === "development") {
   })
 }
 
-createApp(App).use(store).use(router).mount("#app")
+createApp(App).use(store, key).use(router).mount("#app")
