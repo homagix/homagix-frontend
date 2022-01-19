@@ -1,11 +1,4 @@
-import {
-  Store as VuexStore,
-  useStore as baseUseStore,
-  CommitOptions,
-  createStore,
-  DispatchOptions,
-  ActionContext,
-} from "vuex"
+import { Store, useStore as baseUseStore, createStore, ActionContext } from "vuex"
 import mutations from "@/store/mutations"
 import actions from "@/store/actions"
 import getters from "@/store/getters"
@@ -37,33 +30,12 @@ export type Getters = typeof getters
 export const MutationType = listKeys(mutations) as Record<keyof Mutations, keyof Mutations>
 export const ActionType = listKeys(actions) as Record<keyof Actions, keyof Actions>
 
-type StoreFuncs = "getters" | "commit" | "dispatch"
-type CommitProp = {
-  commit<K extends keyof Mutations, P extends Parameters<Mutations[K]>[1]>(
-    key: K,
-    payload: P,
-    options?: CommitOptions
-  ): ReturnType<Mutations[K]>
-}
-type DispatchProp = {
-  dispatch<K extends keyof Actions>(
-    key: K,
-    payload?: Parameters<Actions[K]>[1],
-    options?: DispatchOptions
-  ): ReturnType<Actions[K]>
-}
-type GettersProp = {
-  getters: {
-    [K in keyof Getters]: ReturnType<Getters[K]>
-  }
-}
 type MutationsProp = {
   commit<K extends keyof Mutations>(key: K, payload: Parameters<Mutations[K]>[1]): ReturnType<Mutations[K]>
 }
 
-export type Store = Omit<VuexStore<State>, StoreFuncs> & CommitProp & DispatchProp & GettersProp
 export type Context = Omit<ActionContext<State, State>, "commit"> & MutationsProp
-export const key: InjectionKey<Store> = Symbol()
-export function useStore(): Store {
+export const key: InjectionKey<Store<State>> = Symbol()
+export function useStore(): Store<State> {
   return baseUseStore(key)
 }
