@@ -29,7 +29,7 @@
     "typescript": "4.5.2",
     "vite": "2.6.14",
     "vue-router": "4.0.12",
-    "vue-tsc": "0.3.0",
+    "vue-tsc": "0.30.6",
     "vuex": "4.0.2"
   },
   "jest": {
