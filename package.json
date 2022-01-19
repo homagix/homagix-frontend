@@ -21,7 +21,7 @@
     "@typescript-eslint/eslint-plugin": "5.10.0",
     "@vitejs/plugin-vue": "1.10.1",
     "esbuild": "0.14.11",
-    "eslint": "8.3.0",
+    "eslint": "8.7.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "4.0.0",
     "msw": "0.35.0",
