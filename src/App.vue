@@ -1,13 +1,8 @@
 <script setup lang="ts">
 import { computed, ref } from "vue"
 import { ActionType, useStore } from "@/store"
-<<<<<<< HEAD
 import Navigation from "./components/Navigation.vue"
 
-=======
-import AppButton from "./components/AppButton.vue"
-import logo from "@/assets/homagix.png"
->>>>>>> b7b46f6 (Update to latest oruga and include some initial styling)
 const store = useStore()
 const error = computed(() => store?.state.error)
 
@@ -32,8 +27,8 @@ function toggleMenu(event: MouseEvent) {
   <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <router-link to="/" class="navbar-item">
-        <h1 >Homagix</h1>
-      </a>
+        <h1 class="title has-text-white">Homagix</h1>
+      </router-link>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" @click="toggleMenu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -44,7 +39,7 @@ function toggleMenu(event: MouseEvent) {
     <Navigation />
     <div id="navbar" ref="navbar" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="/recipes"> Recipes </a>
+        <a class="navbar-item has-text-white has-text-weight-bold" href="/recipes"> Recipes </a>
       </div>
 
       <div class="navbar-end">
@@ -82,7 +77,9 @@ function toggleMenu(event: MouseEvent) {
 .error {
   color: red;
 }
-
+#navbar.is-active .navbar-item {
+  color: #000000 !important;
+}
 .error-container {
   border: 2px solid red;
   margin: 10px;

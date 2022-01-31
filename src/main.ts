@@ -5,7 +5,7 @@ import createRouter from "@/router"
 import Oruga from '@oruga-ui/oruga-next'
 import { bulmaConfig } from "@oruga-ui/theme-bulma"
 // Could be replaced in the future with a sass import
-import "@oruga-ui/theme-bulma/dist/bulma.css"
+import "@/assets/bulma.scss"
 import "@fortawesome/fontawesome-free/scss/fontawesome.scss"
 import "@fortawesome/fontawesome-free/scss/regular.scss"
 import "@fortawesome/fontawesome-free/scss/solid.scss"
