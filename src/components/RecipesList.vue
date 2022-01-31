@@ -5,7 +5,6 @@ import { useStore } from "@/store"
 import { useRouter } from "vue-router"
 
 const store = useStore()
-const dishes = computed(() => store.state.dishes)
 const router = useRouter()
 
 const sortedDishes = computed(() => {
@@ -22,7 +21,7 @@ function activate(id: string) {
   <h2>Rezepte</h2>
   <ul id="recipes-list">
     <li v-for="dish in sortedDishes" :key="dish.id" @click="() => activate(dish.id)">
-      {{ dish.name }}
+      <o-icon icon="utensils"></o-icon> {{ dish.name }}
     </li>
   </ul>
 </template>

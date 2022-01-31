@@ -1,43 +1,74 @@
 <script setup lang="ts">
-import { computed } from "vue"
+import { computed, ref } from "vue"
 import { ActionType, useStore } from "@/store"
+<<<<<<< HEAD
 import Navigation from "./components/Navigation.vue"
 
+=======
+import AppButton from "./components/AppButton.vue"
+import logo from "@/assets/homagix.png"
+>>>>>>> b7b46f6 (Update to latest oruga and include some initial styling)
 const store = useStore()
 const error = computed(() => store?.state.error)
 
+const navbar = ref<HTMLElement>()
 store.dispatch(ActionType.LOAD_DISHES)
 store.dispatch(ActionType.LOAD_INGREDIENTS)
 
 function clearError() {
   store.dispatch(ActionType.CLEAR_ERROR)
 }
+
+function toggleMenu(event: MouseEvent) {
+  if (event.target) {
+    const target = event.target as HTMLElement
+    target.classList.toggle("is-active")
+    navbar.value!.classList.toggle("is-active")
+  }
+}
 </script>
 
 <template>
-  <div class="title">
-    <h1><router-link to="/">Homagix</router-link></h1>
-    <Navigation />
-  </div>
+  <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <router-link to="/" class="navbar-item">
+        <h1 >Homagix</h1>
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" @click="toggleMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
 
+    <Navigation />
+    <div id="navbar" ref="navbar" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/recipes"> Recipes </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light"> Log in </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- TODO style this with bulma/oruga -->
   <div v-if="error" class="error-container">
     <span @click="clearError">×</span>
     {{ error.message }}
   </div>
 
-  <div class="content">
+  <section class="section">
     <router-view></router-view>
-    <o-button rounded variant="primary">Test</o-button>
-    <o-autocomplete
-        rounded
-        :data="['test1','Autocomplete','Me']"
-        placeholder="Autocomplete"
-        icon="search"
-        clearable
-    >
-      <template #empty>No results found</template>
-    </o-autocomplete>
-  </div>
+  </section>
 
   <!--
   <Alert />
@@ -48,53 +79,6 @@ function clearError() {
 </template>
 
 <style lang="scss">
-html,
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 0;
-  margin: 0;
-  line-height: 1.3;
-}
-
-.title {
-  margin: 0;
-  padding: 10px 10px 5px;
-  background: linear-gradient(to bottom right, #f0a30a, rgb(240, 205, 10));
-  overflow: hidden;
-
-  h1 {
-    position: relative;
-    float: left;
-    font-size: 28px;
-    margin: 0;
-    padding: 0 30px 0 0;
-
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      left: -0.3px;
-      top: -0.07em;
-      width: 0.55em;
-      height: 0.55em;
-      border: 0.19em none #ffff00;
-      border-top-style: solid;
-      border-left-style: solid;
-      transform: scale(1, 0.66) rotate(45deg);
-    }
-
-    a {
-      color: #ffff00;
-      text-decoration: none;
-    }
-  }
-
-  input {
-    font: 1em Arial, helvetica, sans-serif;
-    border: none;
-  }
-}
-
 .error {
   color: red;
 }
@@ -107,19 +91,6 @@ body {
   span {
     cursor: pointer;
   }
-}
-
-.content {
-  padding: 10px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-img {
-  max-width: 100%;
 }
 
 @media print {
