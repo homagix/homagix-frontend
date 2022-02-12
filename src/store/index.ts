@@ -3,7 +3,6 @@ import mutations from "@/store/mutations"
 import actions from "@/store/actions"
 import getters from "@/store/getters"
 import { AppError, Dish } from "@/types"
-import { InjectionKey } from "vue"
 
 const state = {
   error: null as AppError | null,
@@ -35,7 +34,6 @@ type MutationsProp = {
 }
 
 export type Context = Omit<ActionContext<State, State>, "commit"> & MutationsProp
-export const key: InjectionKey<Store<State>> = Symbol()
 export function useStore(): Store<State> {
-  return baseUseStore(key)
+  return baseUseStore()
 }

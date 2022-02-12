@@ -3,8 +3,10 @@
   "version": "5.0.0",
   "scripts": {
     "dev": "vite",
-    "lint": "eslint src/**/*.ts",
-    "test": "vite test",
+    "msw": "esbuild --platform=node --bundle src/msw.ts | node",
+    "lint": "eslint src **/*.ts",
+    "test": "npm test",
+    "test:unit": "vitest run --coverage",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "postinstall": "msw init public --save"
@@ -20,22 +22,19 @@
     "@types/node": "16.11.24",
     "@typescript-eslint/eslint-plugin": "5.10.0",
     "@vitejs/plugin-vue": "2.0.1",
+    "@vue/test-utils": "^2.0.0-rc.18",
+    "c8": "^7.11.0",
     "esbuild": "0.14.11",
     "eslint": "8.7.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-prettier": "4.0.0",
     "msw": "0.36.5",
     "prettier": "2.5.1",
+    "prettier-eslint": "^13.0.0",
     "typescript": "4.5.4",
     "vite": "2.7.13",
+    "vitest": "^0.2.5",
     "vue-router": "4.0.12",
     "vue-tsc": "0.30.6",
     "vuex": "4.0.2"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/src/$1"
-    }
   },
   "msw": {
     "workerDirectory": "public"
