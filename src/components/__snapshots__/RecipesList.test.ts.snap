@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`RecipesList > should render 1`] = `
+"<h2>Rezepte</h2>
+<ul id=\\"recipes\\">
+  <li>dish 1</li>
+  <li>dish 2</li>
+</ul>"
+`;
