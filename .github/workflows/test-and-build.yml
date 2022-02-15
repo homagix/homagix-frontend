@@ -101,7 +101,7 @@ jobs:
 
       - name: Deploy to github pages 🚀
         if: ${{ github.ref == 'refs/heads/main' }}
-        uses: JamesIves/github-pages-deploy-action@164583b9e44b4fc5910e78feb607ea7c98d3c7b9 # tag=4.1.1
+        uses: JamesIves/github-pages-deploy-action@b36f842fa378d7cbf6695fcac86ecdcef3af8af3 # tag=v4.2.3
         with:
           branch: gh-pages
           folder: dist
