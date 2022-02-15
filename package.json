@@ -16,7 +16,7 @@
     "npm": ">=6.0.0"
   },
   "dependencies": {
-    "vue": "3.2.27"
+    "vue": "3.2.31"
   },
   "devDependencies": {
     "@types/node": "16.11.25",
