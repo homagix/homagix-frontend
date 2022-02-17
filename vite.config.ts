@@ -3,11 +3,13 @@ import { defineConfig, UserConfigExport } from "vite"
 import vue from "@vitejs/plugin-vue"
 import { server } from "./src/mocks/server"
 
+const base = process.env.NODE_ENV === "production" ? "/homagix-frontend/" : "/"
+
 server.listen()
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/homagix-frontend",
+  base,
   plugins: [vue()],
   // build: {
   //   manifest: true,
