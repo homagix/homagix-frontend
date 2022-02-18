@@ -12,7 +12,7 @@ This is the frontend part of Homagix. It is most likely that you want to clone [
 
 ## Adding recipes
 
-Dishes are stored in [the server](https://github.com/jschirrmacher/homagix-server/README.md#Adding).
+Dishes are stored in [the server](https://github.com/jschirrmacher/homagix-server).
 
 ## Install and run
 
@@ -28,3 +28,11 @@ If you want to install a development version, use the following npm commands aft
 
     npm install
     npm run dev
+
+## Running on GitHub Pages
+
+You can also use the [frontend in Github Pages](https://jschirrmacher.github.io/homagix-frontend/). However, you will still need a server backend where dishes are stored. To configure where it runs, open the dev console in your browser and enter
+
+    localStorage.setItem("basePath", "http://localhost:8200")
+
+Replace the URL in this command by the one valid for your server (which would be on your local machine in this example).
