@@ -1,5 +1,5 @@
 import { State } from "@/store"
-import { AppError, Dish } from "@/types"
+import { AppError, Dish, Ingredient } from "@/types"
 
 export default {
   SET_ERROR(state: State, error: AppError | null): void {
@@ -8,5 +8,9 @@ export default {
 
   LOADED_DISHES(state: State, payload: { dishes: Dish[] }): void {
     state.dishes = payload.dishes
+  },
+
+  LOADED_INGREDIENTS(state: State, payload: { ingredients: Ingredient[] }): void {
+    state.ingredients = payload.ingredients
   },
 }

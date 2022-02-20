@@ -2,11 +2,12 @@ import { Store, useStore as baseUseStore, createStore, ActionContext } from "vue
 import mutations from "@/store/mutations"
 import actions from "@/store/actions"
 import getters from "@/store/getters"
-import { AppError, Dish } from "@/types"
+import { AppError, Dish, Ingredient } from "@/types"
 
 const state = {
   error: null as AppError | null,
   dishes: [] as Dish[],
+  ingredients: [] as Ingredient[],
 }
 
 const store = createStore({

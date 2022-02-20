@@ -6,6 +6,7 @@ const store = useStore()
 const error = computed(() => store?.state.error)
 
 store.dispatch(ActionType.LOAD_DISHES)
+store.dispatch(ActionType.LOAD_INGREDIENTS)
 
 function clearError() {
   store.dispatch(ActionType.CLEAR_ERROR)
@@ -93,9 +94,17 @@ body {
   }
 }
 
+.content {
+  padding: 10px;
+}
+
 ul {
   list-style: none;
   padding: 0;
+}
+
+img {
+  max-width: 100%;
 }
 
 @media print {

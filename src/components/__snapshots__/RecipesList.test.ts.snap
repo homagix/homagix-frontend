@@ -1,9 +1,9 @@
 // Vitest Snapshot v1
 
 exports[`RecipesList > should render 1`] = `
-"<h2>Rezepte</h2>
-<ul id=\\"recipes\\">
-  <li>dish 1</li>
-  <li>dish 2</li>
+"<h2 data-v-2a5a893a=\\"\\">Rezepte</h2>
+<ul id=\\"recipes-list\\" data-v-2a5a893a=\\"\\">
+  <li data-v-2a5a893a=\\"\\">dish 1</li>
+  <li data-v-2a5a893a=\\"\\">dish 2</li>
 </ul>"
 `;
