@@ -1,8 +1,13 @@
 type FetchData = Record<string, string>
 type FetchOptions = Record<string, string | string[] | Record<string, string>>
 
+const basePath = localStorage.getItem("basePath") || "https://homagix.dilab.co"
+
+export function getImageUrl(name: string) {
+  return basePath + "/images/" + name
+}
+
 export async function fetchFromBackend(method: string, path: string, data: FetchData = {}, options: FetchOptions = {}) {
-  const basePath = localStorage.getItem("basePath") || "https://homagix.dilab.co"
   if (["post", "put", "patch"].includes(method.toLowerCase()) && Object.keys(data).length) {
     options.data = JSON.stringify(data)
     options.headers = { ...((options.headers || {}) as Record<string, string>), ["Content Type"]: "application/json" }
