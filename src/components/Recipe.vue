@@ -33,14 +33,34 @@ function image(dish: Dish) {
   <section v-if="dish">
     <h2>{{ dish.name }}</h2>
     <img v-if="dish.image" :src="image(dish)" />
-    <ul id="ingredient-list">
-      <li v-for="ingredient in ingredients()" :key="ingredient.id">
-        {{ ingredient.amount }} {{ ingredient.unit }} {{ ingredient.name }}
-      </li>
-    </ul>
+    <div class="wrapper" id="ingredient-list">
+      <template v-for="ingredient in ingredients()" :key="ingredient.id">
+        <span class="number">{{ ingredient.amount }}</span>
+        <span>{{ ingredient.unit }}</span>
+        <span>{{ ingredient.name }}</span>
+      </template>
+    </div>
 
     <p>{{ dish.recipe }}</p>
 
     <button @click="backToList">Zurück</button>
   </section>
 </template>
+
+<style scoped lang="scss">
+.wrapper {
+  display: inline-grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto 1fr;
+  border: 1px solid #888;
+  padding: 3px;
+
+  > * {
+    padding: 3px;
+  }
+}
+
+.number {
+  text-align: right;
+}
+</style>
