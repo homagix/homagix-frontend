@@ -1,7 +1,7 @@
 type FetchData = Record<string, string>
 type FetchOptions = Record<string, string | string[] | Record<string, string>>
 
-const basePath = localStorage.getItem("basePath") || "https://homagix.dilab.co"
+const basePath = localStorage.getItem("basePath") || "https://homagix-server.dilab.co"
 
 export function getImageUrl(name: string) {
   return basePath + "/images/" + name
