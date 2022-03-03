@@ -29,7 +29,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jsdom": "^19.0.0",
-    "msw": "0.38.1",
+    "msw": "0.38.2",
     "prettier": "2.5.1",
     "prettier-eslint": "13.0.0",
     "sass": "1.49.9",
