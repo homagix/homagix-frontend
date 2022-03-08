@@ -5,7 +5,7 @@
     "dev": "vite",
     "msw": "esbuild --platform=node --bundle src/msw.ts | node",
     "lint": "eslint src **/*.ts",
-    "test": "npm test:unit",
+    "test": "npm run test:unit",
     "test:unit": "vitest run --coverage",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
