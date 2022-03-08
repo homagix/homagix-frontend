@@ -9,8 +9,8 @@ export function getImageUrl(name: string) {
 
 export async function fetchFromBackend(method: string, path: string, data: FetchData = {}, options: FetchOptions = {}) {
   if (["post", "put", "patch"].includes(method.toLowerCase()) && Object.keys(data).length) {
-    options.data = JSON.stringify(data)
-    options.headers = { ...((options.headers || {}) as Record<string, string>), ["Content Type"]: "application/json" }
+    options.body = JSON.stringify(data)
+    options.headers = { ...((options.headers || {}) as Record<string, string>), "Content-Type": "application/json" }
   } else if (Object.keys(data).length) {
     path += `?${new URLSearchParams(data).toString()}`
   }
