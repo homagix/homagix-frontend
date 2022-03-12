@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue"
 import { ActionType, useStore } from "@/store"
+import Navigation from "./components/Navigation.vue"
 
 const store = useStore()
 const error = computed(() => store?.state.error)
@@ -15,8 +16,8 @@ function clearError() {
 
 <template>
   <div class="title">
-    <h1>Homagix</h1>
-    <!-- <Navigation /> -->
+    <h1><router-link to="/">Homagix</router-link></h1>
+    <Navigation />
   </div>
 
   <div v-if="error" class="error-container">
@@ -52,7 +53,6 @@ body {
   overflow: hidden;
 
   h1 {
-    color: #ffff00;
     position: relative;
     float: left;
     font-size: 28px;
@@ -71,6 +71,11 @@ body {
       border-top-style: solid;
       border-left-style: solid;
       transform: scale(1, 0.66) rotate(45deg);
+    }
+
+    a {
+      color: #ffff00;
+      text-decoration: none;
     }
   }
 

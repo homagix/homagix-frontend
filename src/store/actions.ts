@@ -2,9 +2,15 @@ import { Context, MutationType, ActionType } from "@/store"
 import { AppError } from "@/types"
 import { loadDishes } from "@/api/dishes"
 import { loadIngredients } from "@/api/ingredients"
+import { logoutUser, registerUser } from "@/api/user"
 
-function catchErrors(func: (context: Context, ...args: unknown[]) => void | Promise<void>, message: string) {
-  return async (context: Context, ...args: unknown[]) => {
+type DropFirst<T extends unknown[]> = T extends [unknown, ...infer U] ? U : never
+
+function catchErrors<T extends (context: Context, ...args: never[]) => ReturnType<T>>(
+  func: T,
+  message: string
+): (context: Context, ...funcArgs: DropFirst<Parameters<T>>) => Promise<void> {
+  return async (context, ...args) => {
     try {
       await func(context, ...args)
     } catch (details) {
@@ -31,4 +37,14 @@ export default {
     async context => context.commit(MutationType.LOADED_INGREDIENTS, await loadIngredients()),
     "Zutaten konnten nicht geladen werden"
   ),
+
+  REGISTER_USER: catchErrors(
+    async (context, name: string) => context.commit(MutationType.SET_USER, await registerUser(name as string)),
+    "Die Registrierung war leider nicht erfolgreich. Bitte noch einmal probieren!"
+  ),
+
+  LOGOUT: catchErrors(async context => {
+    await logoutUser()
+    context.commit(MutationType.SET_USER, null)
+  }, "Logout fehlgeschlagen"),
 }

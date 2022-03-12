@@ -30,5 +30,11 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "jsdom",
+    coverage: {
+      all: true,
+      include: ["src/**/*.{ts,vue}"],
+      exclude: ["src/mocks/**/*"],
+      reporters: ["text", "html"],
+    },
   },
 } as UserConfigExport)

@@ -1,13 +1,15 @@
-import { Store, useStore as baseUseStore, createStore, ActionContext } from "vuex"
+import { Store as VuexStore, useStore as baseUseStore, createStore, ActionContext } from "vuex"
 import mutations from "@/store/mutations"
 import actions from "@/store/actions"
 import getters from "@/store/getters"
 import { AppError, Dish, Ingredient } from "@/types"
+import { state as auth } from "@/auth"
 
 const state = {
   error: null as AppError | null,
   dishes: [] as Dish[],
   ingredients: [] as Ingredient[],
+  ...auth,
 }
 
 const store = createStore({
@@ -35,6 +37,8 @@ type MutationsProp = {
 }
 
 export type Context = Omit<ActionContext<State, State>, "commit"> & MutationsProp
-export function useStore(): Store<State> {
+export type Store = VuexStore<State>
+
+export function useStore(): Store {
   return baseUseStore()
 }

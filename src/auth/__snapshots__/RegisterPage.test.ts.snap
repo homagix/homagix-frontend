@@ -1,0 +1,8 @@
+// Vitest Snapshot v1
+
+exports[`RegisterPage > should render 1`] = `
+"<h2>Neu registrieren</h2>
+<p> Hier kannst du deinem Zugang einen Namen (z.B. deinen Vornamen oder auch einen Phantasienamen) geben. Wir sprechen dich dann künftig damit an. </p>
+<label> Name <input type=\\"text\\"></label>
+<div class=\\"button-list\\"><button id=\\"register-button\\" data-v-41d81733=\\"\\">Registrieren</button><button id=\\"cancel-button\\" data-v-41d81733=\\"\\">Abbrechen</button></div>"
+`;
