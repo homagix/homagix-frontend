@@ -1,0 +1,8 @@
+// Vitest Snapshot v1
+
+exports[`UserPage > should render 1`] = `
+"<h2>Dein Zugang</h2>
+<p> Speichere diese Seite als Bookmark oder Favorit, dann kommst du einfach wieder hierher zurück, ohne dich einloggen zu müssen. </p>
+<p>Da jede:r mit dem Bookmark hierher kommt, solltest du diesen Link nicht an andere weiter geben.</p>
+<div class=\\"button-list\\"><button id=\\"recipes-button\\" data-v-41d81733=\\"\\">Zu den Rezepten</button></div>"
+`;
