@@ -6,7 +6,7 @@ import Navigation from "./components/Navigation.vue"
 const store = useStore()
 const error = computed(() => store?.state.error)
 
-const navbar = ref<HTMLElement>()
+const navbarOpen = ref(false)
 store.dispatch(ActionType.LOAD_DISHES)
 store.dispatch(ActionType.LOAD_INGREDIENTS)
 
@@ -16,43 +16,34 @@ function clearError() {
 
 function toggleMenu(event: MouseEvent) {
   if (event.target) {
-    const target = event.target as HTMLElement
-    target.classList.toggle("is-active")
-    navbar.value!.classList.toggle("is-active")
+    navbarOpen.value = !navbarOpen.value
   }
+}
+
+function closeMenu() {
+  navbarOpen.value = false
 }
 </script>
 
 <template>
-  <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-warning" role="navigation" aria-label="main navigation" @click="closeMenu">
     <div class="navbar-brand">
       <router-link to="/" class="navbar-item">
-        <h1 class="title has-text-white">Homagix</h1>
+        <h1 class="title">Homagix</h1>
       </router-link>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" @click="toggleMenu">
+
+      <div v-if="store.state.user" class="username">
+        {{ store.state.user.name }}
+      </div>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" @click.stop="toggleMenu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <Navigation />
-    <div id="navbar" ref="navbar" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item has-text-white has-text-weight-bold" href="/recipes"> Recipes </a>
-      </div>
-
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary">
-              <strong>Sign up</strong>
-            </a>
-            <a class="button is-light"> Log in </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Navigation :open="navbarOpen" />
   </nav>
 
   <!-- TODO style this with bulma/oruga -->
@@ -61,7 +52,7 @@ function toggleMenu(event: MouseEvent) {
     {{ error.message }}
   </div>
 
-  <section class="section">
+  <section class="section" @click="closeMenu">
     <router-view></router-view>
   </section>
 
@@ -88,6 +79,39 @@ function toggleMenu(event: MouseEvent) {
   span {
     cursor: pointer;
   }
+}
+
+h1.title {
+  color: #ffff00;
+  position: relative;
+  float: left;
+  font-size: 28px;
+  margin: 0;
+  padding: 0 30px 0 0;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 1.2px;
+    top: -0.07em;
+    width: 0.65em;
+    height: 0.65em;
+    border: 0.19em none #ffff00;
+    border-top-style: solid;
+    border-left-style: solid;
+    transform: scale(1, 0.66) rotate(45deg);
+  }
+}
+
+.username {
+  font-size: 120%;
+  line-height: 3.3rem;
+  margin-left: auto;
+}
+
+#app .navbar-burger {
+  margin-left: 0;
 }
 
 @media print {
