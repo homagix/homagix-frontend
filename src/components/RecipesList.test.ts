@@ -3,6 +3,7 @@ import { mount } from "@vue/test-utils"
 import RecipesList from "@/components/RecipesList.vue"
 import { createStore } from "vuex"
 import { Dish } from "@/types"
+import Oruga from '@oruga-ui/oruga-next'
 
 const testDishes = [
   { id: "1", name: "dish 1", items: [], alwaysOnList: false, image: "dish1.jpg" },
@@ -22,7 +23,7 @@ describe("RecipesList", () => {
     })
     const wrapper = mount(RecipesList, {
       global: {
-        plugins: [store],
+        plugins: [store, Oruga],
       },
     })
     expect(wrapper.html()).toMatchSnapshot()
