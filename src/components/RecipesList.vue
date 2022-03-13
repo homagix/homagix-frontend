@@ -18,7 +18,7 @@ function activate(id: string) {
 </script>
 
 <template>
-  <h2>Rezepte</h2>
+  <div class="title is-4">Rezepte</div>
   <ul id="recipes-list">
     <li v-for="dish in sortedDishes" :key="dish.id" @click="() => activate(dish.id)">
       <o-icon icon="utensils"></o-icon> {{ dish.name }}
