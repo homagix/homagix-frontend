@@ -4,6 +4,7 @@ import { useStore } from "@/store"
 import { useRoute, useRouter } from "vue-router"
 import { Dish } from "@/types"
 import { getImageUrl } from "@/api"
+import AppButton from "./AppButton.vue"
 
 const store = useStore()
 const route = useRoute()
@@ -31,7 +32,7 @@ function image(dish: Dish) {
 
 <template>
   <section v-if="dish">
-    <h2>{{ dish.name }}</h2>
+    <div class="title is-4">{{ dish.name }}</div>
     <img v-if="dish.image" :src="image(dish)" />
     <div class="wrapper" id="ingredient-list">
       <template v-for="ingredient in ingredients()" :key="ingredient.id">
@@ -43,7 +44,7 @@ function image(dish: Dish) {
 
     <p>{{ dish.recipe }}</p>
 
-    <button @click="backToList">Zurück</button>
+    <AppButton @click="backToList">Zurück</AppButton>
   </section>
 </template>
 
