@@ -24,6 +24,7 @@ export default defineConfig({
       "/api": {
         target: "http://localhost:8200",
         timeout: 1000,
+        rewrite: path => path.replace(/^\/api/, ""),
       },
     },
   },
