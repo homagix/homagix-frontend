@@ -55,7 +55,7 @@ jobs:
 
       - name: Generate Code Coverage report
         id: code-coverage
-        uses: barecheck/code-coverage-action@b0a1c3f5829eac61289c08d2026b8e1f00182925 # tag=v0.6.0
+        uses: barecheck/code-coverage-action@9c40092201880911f548e01912ae560205b4b135 # tag=v0.6.1
         with:
           barecheck-github-app-token: ${{ secrets.BARECHECK_GITHUB_APP_TOKEN }}
           lcov-file: "./coverage/lcov.info"
