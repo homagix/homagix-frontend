@@ -1,4 +1,4 @@
-type FetchData = Record<string, string>
+type FetchData = Record<string, string | number | boolean>
 type FetchOptions = Record<string, string | string[] | Record<string, string>>
 
 const basePath = localStorage.getItem("basePath") || "https://homagix-server.dilab.co"
@@ -7,12 +7,24 @@ export function getImageUrl(name: string) {
   return basePath + "/images/" + name
 }
 
+const defaultHeaders = {
+  "Content-Type": "application/json",
+} as Record<string, string>
+
+export function setAuthorization(authorization?: string) {
+  if (authorization) {
+    defaultHeaders.Authorization = authorization
+  } else {
+    delete defaultHeaders.Authorization
+  }
+}
+
 export async function fetchFromBackend(method: string, path: string, data: FetchData = {}, options: FetchOptions = {}) {
+  options.headers = { ...defaultHeaders, ...((options.headers || {}) as Record<string, string>) }
   if (["post", "put", "patch"].includes(method.toLowerCase()) && Object.keys(data).length) {
     options.body = JSON.stringify(data)
-    options.headers = { ...((options.headers || {}) as Record<string, string>), "Content-Type": "application/json" }
   } else if (Object.keys(data).length) {
-    path += `?${new URLSearchParams(data).toString()}`
+    path += `?${new URLSearchParams(data as Record<string, string>).toString()}`
   }
   options.method = method
   const response = await fetch(basePath + path, options)
