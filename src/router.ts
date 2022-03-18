@@ -3,10 +3,10 @@ import RecipesList from "@/components/RecipesList.vue"
 import Recipe from "@/components/Recipe.vue"
 import NotFoundPage from "@/components/NotFoundPage.vue"
 import { Store } from "@/store"
-import AuthRouter from "@/auth/AuthRouter"
+import { AuthRouterFactory, setCookie, setStore } from "@/auth"
 
 export default (store: Store) => {
-  const auth = AuthRouter(store)
+  const auth = AuthRouterFactory(() => store.state.user, [setCookie(7200), setStore(store)])
   const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [

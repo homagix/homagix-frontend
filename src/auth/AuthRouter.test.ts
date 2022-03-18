@@ -1,14 +1,11 @@
-import { Store } from "@/store"
-import { createStore } from "vuex"
 import { describe, expect, it, vi } from "vitest"
-import AuthRouter from "@/auth/AuthRouter"
-import { RouteRecordRaw, RouteLocationNormalized } from "vue-router"
+import type { RouteRecordRaw, RouteLocationNormalized } from "vue-router"
+import type { User, TokenReceiverFunction } from "."
+import { AuthRouterFactory } from "."
+import { user, token } from "./testdata"
 
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjMiLCJmaXJzdE5hbWUiOiJhYmMiLCJpYXQiOjE2NDY5Nzg0NTUsImV4cCI6MTY0NzA2NDg1NX0.kClNCHxRnm_rvNpkdwdHgDsVebJfOzZ66Z_5epxkKNU"
-
-function getRoute(path: string, store: Store) {
-  const authRouter = AuthRouter(store)
+function getRoute(path: string, user: User | null = null, receivers: TokenReceiverFunction[] = []) {
+  const authRouter = AuthRouterFactory(() => user, receivers)
   const route = authRouter.routes.find(r => r.path === path) as RouteRecordRaw
   expect(route).toBeDefined()
   return { route, authRouter }
@@ -28,8 +25,7 @@ function mockFetch(status: number, result: object) {
 
 describe("AuthRouter", () => {
   it("should return an object containing the auth routes", () => {
-    const store = createStore({}) as Store
-    const authRouter = AuthRouter(store)
+    const authRouter = AuthRouterFactory(() => null, [])
     expect(authRouter).toHaveProperty("routes")
     expect(authRouter.routes).toBeInstanceOf(Array)
     expect(authRouter.routes.length).toBeGreaterThan(0)
@@ -37,78 +33,78 @@ describe("AuthRouter", () => {
   })
 
   it("should return a beforeEach function", () => {
-    const store = createStore({}) as Store
-    const authRouter = AuthRouter(store)
+    const authRouter = AuthRouterFactory(() => null)
     expect(authRouter).toHaveProperty("beforeEach")
     expect(authRouter.beforeEach).toBeInstanceOf(Function)
   })
 
-  it("should take the user from the cookie token if beforeEach() is called", () => {
-    const setUserMutation = vi.fn()
-    const store = createStore({ mutations: { SET_USER: setUserMutation } }) as Store
-    const authRouter = AuthRouter(store)
+  it("should take the user from the cookie token if no current user and beforeEach() is called", () => {
+    const receiver = vi.fn()
+    const authRouter = AuthRouterFactory(() => null, [receiver])
     document.cookie = "token=" + token
     authRouter.beforeEach()
-    expect(setUserMutation).toHaveBeenCalledWith(expect.any(Object), { id: "123", name: "abc" })
+    expect(receiver).toHaveBeenCalledWith(token)
+  })
+
+  it("should call each token receiver functions with the new token", () => {
+    const callbacks = [vi.fn(), vi.fn()]
+    const authRouter = AuthRouterFactory(() => null, callbacks)
+    document.cookie = "token=" + token
+    authRouter.beforeEach()
+    expect(callbacks.map(callback => callback.mock.calls)).toEqual([[[token]], [[token]]])
   })
 
   describe("using the auth code", () => {
     function setupTest() {
-      const setUserMutation = vi.fn()
-      const store = createStore({ mutations: { SET_USER: setUserMutation } }) as Store
-      const { route, authRouter } = getRoute("/user/:id/:code", store)
+      const receiver = vi.fn()
+      const { route, authRouter } = getRoute("/user/:id/:code", null, [receiver])
       const beforeEnter = route.beforeEnter as (to: RouteLocationNormalized) => Promise<string | void>
-      return { store, authRouter, beforeEnter, setUserMutation }
+      return { authRouter, beforeEnter, receiver }
     }
 
     it("should set the user into the store", async () => {
-      const { beforeEnter, setUserMutation } = setupTest()
+      const { beforeEnter, receiver } = setupTest()
       mockFetch(200, { token })
       const result = await beforeEnter({ params: { id: "123", code: "456" } } as unknown as RouteLocationNormalized)
       expect(result).toBe(true)
-      expect(setUserMutation).toHaveBeenCalledWith(expect.any(Object), { accessCode: "456", id: "123", name: "abc" })
+      expect(receiver).toHaveBeenCalledWith(token)
     })
 
     it("should redirect to /login if authentication code is invalid", async () => {
       const originalErrorLog = console.error
       console.error = () => undefined
-      const { beforeEnter, setUserMutation } = setupTest()
+      const { beforeEnter, receiver } = setupTest()
       mockFetch(403, { error: "invalid code" })
       const result = await beforeEnter({ params: { id: "123", code: "789" } } as unknown as RouteLocationNormalized)
       expect(result).toBe("/login")
-      expect(setUserMutation).not.toHaveBeenCalled()
+      expect(receiver).not.toHaveBeenCalled()
       console.error = originalErrorLog
     })
   })
 
   describe("using the /my route", () => {
+    function setupTest(user: User | null = null, receivers: TokenReceiverFunction[] = []) {
+      const { route } = getRoute("/my", user, receivers)
+      expect(route.redirect).toBeDefined()
+      return route.redirect as () => string
+    }
+
     it("should redirect to auth code route if user is logged in", () => {
-      const store = createStore({ state: () => ({ user: { id: "123", accessCode: "456" } }) }) as Store
-      const { route } = getRoute("/my", store)
-      const redirect = route.redirect as () => string
-      expect(redirect).toBeDefined()
+      const redirect = setupTest(user)
       expect(redirect()).toBe("/user/123/456")
     })
 
     it("should redirect to /login if user is not logged in", () => {
-      const store = createStore({ state: () => ({ user: null }) }) as Store
-      const { route } = getRoute("/my", store)
-      const redirect = route.redirect as () => string
-      expect(redirect).toBeDefined()
+      const redirect = setupTest()
       expect(redirect()).toBe("/login")
     })
   })
 
-  it("should expire the cookie and remove the user from the store if /logout is called", async () => {
-    const setUserMutation = vi.fn()
-    const store = createStore({
-      mutations: { SET_USER: setUserMutation },
-      state: () => ({ user: { id: "123", accessCode: "456" } }),
-    }) as Store
-    const { route } = getRoute("/logout", store)
+  it("should call the receiver function without token if /logout is called", async () => {
+    const receiver = vi.fn()
+    const { route } = getRoute("/logout", user, [receiver])
     const beforeEnter = route.beforeEnter as (to: RouteLocationNormalized) => Promise<string | void>
     await beforeEnter({} as RouteLocationNormalized)
-    expect(document.cookie).toBe("")
-    expect(setUserMutation).toHaveBeenCalledWith(expect.any(Object), null)
+    expect(receiver).toBeCalledWith()
   })
 })

@@ -1,42 +1,29 @@
-import decodeJWT from "jwt-decode"
 import RegisterPage from "@/auth/RegisterPage.vue"
 import LoginPage from "@/auth/LoginPage.vue"
 import LogoutPage from "@/auth/LogoutPage.vue"
 import UserPage from "@/auth/UserPage.vue"
-import { MutationType, Store } from "@/store"
 import { loginWithCode } from "@/api/user"
 import { User } from "@/auth"
 import { RouteLocationNormalized, RouteRecordRaw } from "vue-router"
 
-type Token = { sub: string; firstName: string; accessCode: string }
+export type TokenReceiverFunction = (token?: string) => void
+export type UserGetter = () => User | null
 
-export default function Factory(store: Store) {
-  function setTokenCookie(value: string, maxAge: number) {
-    document.cookie = `token=${value};path=${import.meta.env.BASE_URL};max-age=${maxAge}`
-  }
-
+export function AuthRouterFactory(getUserFunc: UserGetter, tokenReceiver: TokenReceiverFunction[] = []) {
   function getUserFromCookie() {
     const cookie = document.cookie.match(/token=([\w.]+)/)
-    if (cookie?.length === 2) {
-      const { sub: id, firstName: name } = decodeJWT(cookie[1]) as Token
-      return { id, name } as User
-    }
-    return null
+    tokenReceiver.forEach(receiver => receiver(cookie ? cookie[1] : undefined))
   }
 
   function logout() {
-    setTokenCookie("", -1)
-    store.commit(MutationType.SET_USER, null)
+    tokenReceiver.forEach(receiver => receiver())
   }
 
   async function useCode(to: RouteLocationNormalized) {
     try {
       const { token } = await loginWithCode(to.params.id as string, to.params.code as string)
       if (token) {
-        setTokenCookie(token, 7200)
-        const user = getUserFromCookie()
-        user && (user.accessCode = to.params.code as string)
-        store.commit(MutationType.SET_USER, user)
+        tokenReceiver.forEach(receiver => receiver(token))
         return true
       }
     } catch (error) {
@@ -46,8 +33,9 @@ export default function Factory(store: Store) {
   }
 
   function getMyUrl() {
-    if (store.state.user) {
-      return "/user/" + store.state.user.id + "/" + store.state.user.accessCode
+    const user = getUserFunc()
+    if (user) {
+      return "/user/" + user.id + "/" + user.accessCode
     } else {
       return "/login"
     }
@@ -62,12 +50,7 @@ export default function Factory(store: Store) {
   ]
 
   function beforeEach() {
-    if (!store.state.user) {
-      const user = getUserFromCookie()
-      if (user) {
-        store.commit(MutationType.SET_USER, user)
-      }
-    }
+    getUserFunc() || getUserFromCookie()
   }
 
   return { routes, beforeEach }
