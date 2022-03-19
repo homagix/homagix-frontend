@@ -37,13 +37,16 @@ export function setAuthorization(authorization?: string) {
 }
 
 export async function fetchFromBackend(method: string, path: string, data: FetchData = {}, options: FetchOptions = {}) {
-  options.headers = { ...defaultHeaders, ...((options.headers || {}) as Record<string, string>) }
-  if (["post", "put", "patch"].includes(method.toLowerCase()) && Object.keys(data).length) {
+  options.headers = {
+    ...defaultHeaders,
+    ...((options.headers || {}) as Record<string, string>),
+  }
+  options.method = method.toUpperCase()
+  if (["POST", "PUT", "PATCH"].includes(options.method) && Object.keys(data).length) {
     options.body = JSON.stringify(data)
   } else if (Object.keys(data).length) {
     path += `?${new URLSearchParams(data as Record<string, string>).toString()}`
   }
-  options.method = method
   const response = await fetch(basePath + path, options)
   const content = response.headers.get("content-type")?.match(/json/) ? await response.json() : await response.text()
   if (!response.ok) {

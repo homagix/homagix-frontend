@@ -1,21 +1,6 @@
 import { afterEach, beforeEach, describe, it, expect, vi } from "vitest"
-import { randomBytes } from "crypto"
-
-const serverUrl = "https://homagix-server.localhost"
-localStorage.setItem("basePath", serverUrl)
-
+import { mockFetch, options, testToken, serverUrl } from "./test-utilts"
 import { fetchFromBackend, setAuthorization, getImageUrl } from "."
-
-const jsonHeader = {
-  "Content-Type": "application/json",
-}
-
-const options = {
-  headers: jsonHeader,
-  method: "get",
-}
-
-const testToken = randomBytes(32).toString("hex")
 
 describe("api", () => {
   describe("getImageUrl", () => {
@@ -25,19 +10,6 @@ describe("api", () => {
   })
 
   describe("fetchFromBackend", () => {
-    function mockFetch(result: object | string = { content: "abc" }) {
-      const contentType = result instanceof Object ? "application/json" : "text/html"
-      global.fetch = vi.fn().mockImplementation(() =>
-        Promise.resolve({
-          ok: true,
-          status: 200,
-          headers: { get: () => contentType },
-          json: () => Promise.resolve(result),
-          text: () => Promise.resolve(result),
-        })
-      )
-    }
-
     beforeEach(() => {
       mockFetch()
     })
@@ -72,7 +44,7 @@ describe("api", () => {
     it("should send a JSON body if data is posted", async () => {
       const data = { foo: "bar" }
       await fetchFromBackend("post", "/path", data)
-      const expectedOptions = { ...options, body: JSON.stringify(data), method: "post" }
+      const expectedOptions = { ...options, body: JSON.stringify(data), method: "POST" }
       expect(global.fetch).toHaveBeenCalledWith(serverUrl + "/path", expectedOptions)
     })
 
