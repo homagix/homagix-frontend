@@ -1,7 +1,8 @@
 import { UnauthorizedError } from "@/api"
+import type { Dish } from "@/types"
 import { Context, MutationType, ActionType } from "@/store"
 import { AppError } from "@/types"
-import { loadDishes } from "@/api/dishes"
+import { loadDishes, setFavorite } from "@/api/dishes"
 import { loadIngredients } from "@/api/ingredients"
 import { logoutUser, registerUser } from "@/api/user"
 
@@ -52,13 +53,18 @@ export default {
     "Zutaten konnten nicht geladen werden"
   ),
 
-  REGISTER_USER: catchErrors(
-    async (context, name: string) => context.commit(MutationType.SET_USER, await registerUser(name as string)),
-    "Die Registrierung war leider nicht erfolgreich. Bitte noch einmal probieren!"
-  ),
+  REGISTER_USER: catchErrors(async (context, name: string) => {
+    context.commit(MutationType.SET_USER, await registerUser(name as string))
+  }, "Die Registrierung war leider nicht erfolgreich. Bitte noch einmal probieren!"),
 
   LOGOUT: catchErrors(async context => {
     await logoutUser()
     context.commit(MutationType.SET_USER, null)
   }, "Logout fehlgeschlagen"),
+
+  TOGGLE_FAVORITE: catchErrors(async (context: Context, dishId: string) => {
+    const mapper = async (d: Dish) => (d.id === dishId ? setFavorite(dishId, !d.isFavorite) : d)
+    const dishes = await Promise.all(context.state.dishes.map(mapper))
+    context.commit(MutationType.LOADED_DISHES, { dishes })
+  }, "Rezept konnte nicht als Favorit markiert werden"),
 }

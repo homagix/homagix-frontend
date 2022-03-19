@@ -1,5 +1,5 @@
 import decodeJWT from "jwt-decode"
-import { MutationType, Store } from "@/store"
+import { ActionType, MutationType, Store } from "@/store"
 
 type DecodedToken = { sub: string; firstName: string; accessCode: string }
 
@@ -15,11 +15,15 @@ export function setAuthorizationHeader(setAuthorization: (authorization?: string
 
 export function setStore(store: Store) {
   return (token?: string) => {
+    const prevUserId = store.state.user?.id
     if (token) {
       const { sub: id, firstName: name, accessCode } = decodeJWT(token) as DecodedToken
       store.commit(MutationType.SET_USER, { id, name, accessCode })
     } else {
       store.commit(MutationType.SET_USER, null)
+    }
+    if (prevUserId !== store.state.user?.id) {
+      store.dispatch(ActionType.LOAD_DATA)
     }
   }
 }

@@ -1,3 +1,8 @@
+export type User = {
+  id: string
+  firstName: string
+}
+
 export type AppError = {
   message: string
   details?: unknown
@@ -18,6 +23,7 @@ export type Dish = {
   last?: string
   items: Item[]
   alwaysOnList: boolean
+  isFavorite?: boolean
 }
 
 export type Ingredient = {

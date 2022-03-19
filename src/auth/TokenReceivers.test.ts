@@ -1,4 +1,5 @@
-import { Store } from "@/store"
+import { User } from "@/types"
+import { ActionType, MutationType, Store } from "@/store"
 import { token } from "./testdata"
 import { setCookie, setAuthorizationHeader, setStore } from "."
 import { expect, it, describe, vi } from "vitest"
@@ -43,23 +44,41 @@ describe("setAuthorization()", () => {
 })
 
 describe("setStore()", () => {
-  function createStore() {
-    return {
-      commit: vi.fn(),
+  function createStore(user?: User) {
+    const state = { user }
+    const store = {
+      dispatch: vi.fn(),
+      commit: vi.fn((_: unknown, user: User) => (state.user = user)),
+      state,
     }
+    return store
   }
 
   it("should set the user in the store", () => {
     const store = createStore()
     const func = setStore(store as unknown as Store)
     func(token)
-    expect(store.commit).toHaveBeenCalledWith("SET_USER", { id: "123", name: "abc" })
+    expect(store.commit).toHaveBeenCalledWith(MutationType.SET_USER, { id: "123", name: "abc" })
   })
 
   it("should remove the user from the store", () => {
     const store = createStore()
     const func = setStore(store as unknown as Store)
     func()
-    expect(store.commit).toHaveBeenCalledWith("SET_USER", null)
+    expect(store.commit).toHaveBeenCalledWith(MutationType.SET_USER, null)
+  })
+
+  it("should reload app data if user logs in", () => {
+    const store = createStore()
+    const func = setStore(store as unknown as Store)
+    func(token)
+    expect(store.dispatch).toHaveBeenCalledWith(ActionType.LOAD_DATA)
+  })
+
+  it("should reload app data if user logs out", () => {
+    const store = createStore({ id: "007" } as User)
+    const func = setStore(store as unknown as Store)
+    func()
+    expect(store.dispatch).toHaveBeenCalledWith(ActionType.LOAD_DATA)
   })
 })

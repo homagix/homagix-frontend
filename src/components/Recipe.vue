@@ -5,6 +5,7 @@ import { useRoute, useRouter } from "vue-router"
 import { Dish } from "@/types"
 import { getImageUrl } from "@/api"
 import AppButton from "./AppButton.vue"
+import Favorite from "./Favorite.vue"
 
 const store = useStore()
 const route = useRoute()
@@ -34,6 +35,7 @@ function image(dish: Dish) {
   <section v-if="dish">
     <div class="title is-4">
       <span>{{ dish.name }}</span>
+      <Favorite :dish="dish" />
     </div>
 
     <div class="image-ingredients">

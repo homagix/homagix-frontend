@@ -3,6 +3,7 @@ import { computed } from "vue"
 import { Dish } from "@/types"
 import { useStore } from "@/store"
 import { useRoute, useRouter } from "vue-router"
+import Favorite from "@/components/Favorite.vue"
 
 const store = useStore()
 const router = useRouter()
@@ -47,7 +48,7 @@ function removeFilter() {
 
   <ul id="recipes-list">
     <li v-for="dish in sortedDishes" :key="dish.id" @click="() => activate(dish.id)">
-      <o-icon icon="utensils"></o-icon> {{ dish.name }}
+      <o-icon icon="utensils"></o-icon> {{ dish.name }} <Favorite :dish="dish" />
     </li>
   </ul>
 </template>
