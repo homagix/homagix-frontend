@@ -68,9 +68,15 @@ function closeMenu() {
 .error {
   color: red;
 }
+
 #navbar.is-active .navbar-item {
   color: #000000 !important;
 }
+
+.navbar-brand {
+  justify-content: space-between;
+}
+
 .error-container {
   border: 2px solid red;
   margin: 10px;
