@@ -6,7 +6,7 @@ const router = useRouter()
 </script>
 
 <template>
-  <h2>Ciao!</h2>
+  <h2 class="title is-4">Ciao!</h2>
   <p>Wir hoffen, Dich bald wiederzusehen!</p>
 
   <div class="button-list">

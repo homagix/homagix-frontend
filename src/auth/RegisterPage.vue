@@ -20,7 +20,7 @@ function cancel() {
 </script>
 
 <template>
-  <h2>Neu registrieren</h2>
+  <h2 class="title is-4">Neu registrieren</h2>
   <p>
     Hier kannst du deinem Zugang einen Namen (z.B. deinen Vornamen oder auch einen Phantasienamen) geben. Wir sprechen
     dich dann künftig damit an.

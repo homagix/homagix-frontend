@@ -6,7 +6,7 @@ const router = useRouter()
 </script>
 
 <template>
-  <h2>Willkommen!</h2>
+  <h2 class="title is-4">Willkommen!</h2>
   <p>
     Du bist bereits registriert? Um deine Daten zu schützen, musst du den Bookmark verwenden, den du nach der
     Registrierung erhalten hast.

@@ -10,7 +10,7 @@ function gotoRecipes() {
 </script>
 
 <template>
-  <h2>Dein Zugang</h2>
+  <h2 class="title is-4">Dein Zugang</h2>
   <p>
     Speichere diese Seite als Bookmark oder Favorit, dann kommst du einfach wieder hierher zurück, ohne dich einloggen
     zu müssen.
