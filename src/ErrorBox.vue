@@ -13,7 +13,7 @@ function clearError() {
 <template>
   <div v-if="error" class="error-container">
     <span @click="clearError">×</span>
-    <router-link v-if="error.link" :to="error.link">{{ error.message }}</router-link>
+    <router-link v-if="error.link" :to="error.link" @click="clearError">{{ error.message }}</router-link>
     <span v-else>{{ error.message }}</span>
   </div>
 </template>
