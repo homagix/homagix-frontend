@@ -2,6 +2,7 @@
 import { computed, ref } from "vue"
 import { ActionType, useStore } from "@/store"
 import Navigation from "./components/Navigation.vue"
+import ErrorBox from "./ErrorBox.vue"
 
 const store = useStore()
 const error = computed(() => store?.state.error)
@@ -9,10 +10,6 @@ const error = computed(() => store?.state.error)
 const navbarOpen = ref(false)
 store.dispatch(ActionType.LOAD_DISHES)
 store.dispatch(ActionType.LOAD_INGREDIENTS)
-
-function clearError() {
-  store.dispatch(ActionType.CLEAR_ERROR)
-}
 
 function toggleMenu(event: MouseEvent) {
   if (event.target) {
@@ -46,22 +43,12 @@ function closeMenu() {
     <Navigation :open="navbarOpen" />
   </nav>
 
-  <!-- TODO style this with bulma/oruga -->
-  <div v-if="error" class="error-container">
-    <span @click="clearError">×</span>
-    {{ error.message }}
-  </div>
+  <ErrorBox />
 
+  <!-- TODO style this with bulma/oruga -->
   <section class="section" @click="closeMenu">
     <router-view></router-view>
   </section>
-
-  <!--
-  <Alert />
-  <LoginDialog />
-  <LostPasswordDialog />
-  <EditableIngredientList />
-  -->
 </template>
 
 <style lang="scss">
@@ -75,16 +62,6 @@ function closeMenu() {
 
 .navbar-brand {
   justify-content: space-between;
-}
-
-.error-container {
-  border: 2px solid red;
-  margin: 10px;
-  padding: 10px;
-
-  span {
-    cursor: pointer;
-  }
 }
 
 h1.title {
