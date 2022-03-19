@@ -1,3 +1,4 @@
+import { UnauthorizedError } from "@/api"
 import { Context, MutationType, ActionType } from "@/store"
 import { AppError } from "@/types"
 import { loadDishes } from "@/api/dishes"
@@ -14,7 +15,15 @@ function catchErrors<T extends (context: Context, ...args: never[]) => ReturnTyp
     try {
       await func(context, ...args)
     } catch (details) {
-      context.dispatch(ActionType.ERROR_OCCURED, { message, details })
+      if (details instanceof UnauthorizedError) {
+        context.commit(MutationType.SET_USER, null)
+        context.commit(MutationType.SET_ERROR, {
+          message: "Bitte melde dich zunächst an!",
+          link: "/login",
+        })
+      } else {
+        context.dispatch(ActionType.ERROR_OCCURED, { message, details })
+      }
     }
   }
 }

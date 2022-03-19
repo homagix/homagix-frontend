@@ -1,6 +1,7 @@
 export type AppError = {
   message: string
   details?: unknown
+  link?: string
 }
 
 export type Item = {

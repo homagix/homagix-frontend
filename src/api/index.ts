@@ -3,6 +3,23 @@ type FetchOptions = Record<string, string | string[] | Record<string, string>>
 
 const basePath = localStorage.getItem("basePath") || "https://homagix-server.dilab.co"
 
+type APIErrorDetails = { status: number; content?: string }
+
+export class APIError extends Error {
+  details: APIErrorDetails
+
+  constructor(message: string, details: APIErrorDetails) {
+    super(message)
+    this.details = details
+  }
+}
+
+export class UnauthorizedError extends APIError {
+  constructor() {
+    super("Missing authentication token", { status: 401 })
+  }
+}
+
 export function getImageUrl(name: string) {
   return basePath + "/images/" + name
 }
@@ -30,10 +47,10 @@ export async function fetchFromBackend(method: string, path: string, data: Fetch
   const response = await fetch(basePath + path, options)
   const content = response.headers.get("content-type")?.match(/json/) ? await response.json() : await response.text()
   if (!response.ok) {
-    const error = {
-      message: `${method} ${path} -> ${response.status}`,
-      details: { request: `${method} ${path}`, status: response.status, content },
+    if (response.status === 401) {
+      throw new UnauthorizedError()
     }
+    const error = new APIError(`${method} ${path} -> ${response.status}`, { status: response.status, content })
     console.error(error)
     throw error
   }
