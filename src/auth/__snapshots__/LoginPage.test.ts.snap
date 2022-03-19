@@ -1,7 +1,7 @@
 // Vitest Snapshot v1
 
 exports[`LoginPage > should render 1`] = `
-"<h2>Willkommen!</h2>
+"<h2 class=\\"title is-4\\">Willkommen!</h2>
 <p> Du bist bereits registriert? Um deine Daten zu schützen, musst du den Bookmark verwenden, den du nach der Registrierung erhalten hast. </p>
 <p>Du willst dich neu registrieren? Dann geht's <a href=\\"/register\\" class=\\"\\">hier entlang</a></p>
 <div class=\\"button-list\\"><button data-v-41d81733=\\"\\">Abbrechen</button></div>"
