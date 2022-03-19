@@ -18,7 +18,7 @@ function clearError() {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .error-container {
   border: 2px solid red;
   margin: 10px;

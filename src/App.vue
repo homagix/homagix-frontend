@@ -52,10 +52,6 @@ function closeMenu() {
 </template>
 
 <style lang="scss">
-.error {
-  color: red;
-}
-
 #navbar.is-active .navbar-item {
   color: #000000 !important;
 }
