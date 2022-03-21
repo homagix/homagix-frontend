@@ -1,23 +1,17 @@
 import { describe, expect, it, vi } from "vitest"
-import { mount } from "@vue/test-utils"
 import LogoutPage from "@/auth/LogoutPage.vue"
-
-const mockRouter = {
-  push: vi.fn(),
-  back: vi.fn(),
-}
-
-vi.mock("vue-router", () => ({ useRouter: () => mockRouter }))
+import { mountComponent } from "./testdata"
 
 describe("LogoutPage", () => {
   it("should render", () => {
-    const wrapper = mount(LogoutPage)
+    const { wrapper } = mountComponent(LogoutPage)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
   it("should go to recipies page if button is clicked", () => {
-    const wrapper = mount(LogoutPage, { global: { mocks: { $router: mockRouter } } })
+    const { wrapper, router } = mountComponent(LogoutPage)
+    router.push = vi.fn()
     wrapper.find("#recipes-button").trigger("click")
-    expect(wrapper.vm.$router.push).toHaveBeenCalledWith("/recipes")
+    expect(router.push).toHaveBeenCalledWith("/recipes")
   })
 })
