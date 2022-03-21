@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router"
 import RecipesList from "@/components/RecipesList.vue"
 import Recipe from "@/components/Recipe.vue"
+import IngredientWordCloud from "@/components/IngredientWordCloud.vue"
 import NotFoundPage from "@/components/NotFoundPage.vue"
 import { Store } from "@/store"
 import { AuthRouterFactory, setCookie, setAuthorizationHeader, setStore } from "@/auth"
@@ -17,6 +18,7 @@ export default (store: Store) => {
       { name: "home", path: "/", redirect: "/recipes" },
       { name: "recipes", path: "/recipes", component: RecipesList },
       { name: "recipe", path: "/recipes/:id", component: Recipe },
+      { name: "wordcloud", path: "/wordcloud", component: IngredientWordCloud },
 
       ...auth.routes,
 

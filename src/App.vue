@@ -51,6 +51,14 @@ function closeMenu() {
 </template>
 
 <style lang="scss">
+html,
+body,
+#app,
+section.section {
+  height: 100%;
+  position: relative;
+}
+
 #navbar.is-active .navbar-item {
   color: #000000 !important;
 }

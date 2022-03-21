@@ -11,9 +11,9 @@ server.listen()
 export default defineConfig({
   base,
   plugins: [vue()],
-  // build: {
-  //   manifest: true,
-  // },
+  build: {
+    manifest: true,
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -31,6 +31,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "jsdom",
+    setupFiles: ["./vitest.setup.js"],
     coverage: {
       all: true,
       include: ["src/**/*.{ts,vue}"],
