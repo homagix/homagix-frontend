@@ -32,36 +32,63 @@ function image(dish: Dish) {
 
 <template>
   <section v-if="dish">
-    <div class="title is-4">{{ dish.name }}</div>
-    <img v-if="dish.image" :src="image(dish)" />
-    <div class="wrapper" id="ingredient-list">
-      <template v-for="ingredient in ingredients()" :key="ingredient.id">
-        <span class="number">{{ ingredient.amount }}</span>
-        <span>{{ ingredient.unit }}</span>
-        <span>{{ ingredient.name }}</span>
-      </template>
+    <div class="title is-4">
+      <span>{{ dish.name }}</span>
     </div>
 
-    <p>{{ dish.recipe }}</p>
+    <div class="image-ingredients">
+      <div>
+        <img v-if="dish.image" :src="image(dish)" />
+      </div>
+      <div class="wrapper">
+        <div id="ingredient-list">
+          <template v-for="ingredient in ingredients()" :key="ingredient.id">
+            <span>{{ ingredient.amount }}</span>
+            <span>{{ ingredient.unit }}</span>
+            <span>{{ ingredient.name }}</span>
+          </template>
+        </div>
+      </div>
+    </div>
+
+    <div id="description">{{ dish.recipe || "Noch gibt es keine Beschreibung zu diesem Gericht" }}</div>
 
     <AppButton @click="backToList">Zurück</AppButton>
   </section>
 </template>
 
 <style scoped lang="scss">
-.wrapper {
+.title,
+.image-ingredients {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-ingredients {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  column-gap: 5px;
+}
+
+#ingredient-list {
   display: inline-grid;
   grid-template-rows: auto;
   grid-template-columns: auto auto 1fr;
   border: 1px solid #888;
   padding: 3px;
+  align-content: flex-start;
 
   > * {
     padding: 3px;
   }
+
+  > *:nth-child(3n-2) {
+    text-align: right;
+  }
 }
 
-.number {
-  text-align: right;
+#description {
+  margin-bottom: 1rem;
 }
 </style>
