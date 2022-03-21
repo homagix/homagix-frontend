@@ -43,15 +43,21 @@ describe("setAuthorization()", () => {
 })
 
 describe("setStore()", () => {
+  function createStore() {
+    return {
+      commit: vi.fn(),
+    }
+  }
+
   it("should set the user in the store", () => {
-    const store = { commit: vi.fn() }
+    const store = createStore()
     const func = setStore(store as unknown as Store)
     func(token)
     expect(store.commit).toHaveBeenCalledWith("SET_USER", { id: "123", name: "abc" })
   })
 
   it("should remove the user from the store", () => {
-    const store = { commit: vi.fn() }
+    const store = createStore()
     const func = setStore(store as unknown as Store)
     func()
     expect(store.commit).toHaveBeenCalledWith("SET_USER", null)

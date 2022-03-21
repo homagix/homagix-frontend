@@ -37,6 +37,11 @@ export default {
     context.commit(MutationType.SET_ERROR, null)
   },
 
+  LOAD_DATA(context: Context) {
+    context.dispatch(ActionType.LOAD_DISHES)
+    context.dispatch(ActionType.LOAD_INGREDIENTS)
+  },
+
   LOAD_DISHES: catchErrors(
     async context => context.commit(MutationType.LOADED_DISHES, await loadDishes()),
     "Rezepte konnten nicht geladen werden"

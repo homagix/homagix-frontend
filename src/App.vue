@@ -8,8 +8,7 @@ const store = useStore()
 const error = computed(() => store?.state.error)
 
 const navbarOpen = ref(false)
-store.dispatch(ActionType.LOAD_DISHES)
-store.dispatch(ActionType.LOAD_INGREDIENTS)
+store.dispatch(ActionType.LOAD_DATA)
 
 function toggleMenu(event: MouseEvent) {
   if (event.target) {
