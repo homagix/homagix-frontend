@@ -44,7 +44,6 @@ function closeMenu() {
 
   <ErrorBox />
 
-  <!-- TODO style this with bulma/oruga -->
   <section class="section" @click="closeMenu">
     <router-view></router-view>
   </section>

@@ -17,6 +17,7 @@ export default (store: Store) => {
     routes: [
       { name: "home", path: "/", redirect: "/recipes" },
       { name: "recipes", path: "/recipes", component: RecipesList },
+      { name: "favorites", path: "/favorites", component: RecipesList, props: { onlyFavorites: true } },
       { name: "recipe", path: "/recipes/:id", component: Recipe },
       { name: "wordcloud", path: "/wordcloud", component: IngredientWordCloud },
 

@@ -5,6 +5,9 @@ import { useStore } from "@/store"
 import { useRoute, useRouter } from "vue-router"
 import Favorite from "@/components/Favorite.vue"
 
+const props = defineProps<{
+  onlyFavorites?: false
+}>()
 const store = useStore()
 const router = useRouter()
 const route = useRoute()
@@ -12,12 +15,25 @@ const route = useRoute()
 const ingredientIds = computed((): Record<string, string> => {
   return Object.assign({}, ...store.state.ingredients.map(i => ({ [i.name.toLocaleLowerCase()]: i.id })))
 })
+
+function isSelectableDish(dish: Dish) {
+  return !dish.alwaysOnList
+}
+
+function isFavoriteDish(dish: Dish) {
+  return !props.onlyFavorites || dish.isFavorite
+}
+
 function containsRequestedIngredient(dish: Dish) {
   const id = route.query.ingredient && ingredientIds.value[(route.query.ingredient as string).toLocaleLowerCase()]
   return !id || dish.items.some(item => item.id === id)
 }
+
 const sortedDishes = computed(() => {
-  const filteredDishes = store.state.dishes?.filter(d => !d.alwaysOnList && containsRequestedIngredient(d))
+  const filteredDishes = store.state.dishes
+    ?.filter(isSelectableDish)
+    .filter(isFavoriteDish)
+    .filter(containsRequestedIngredient)
   return filteredDishes?.sort((d1, d2) => d1.name.localeCompare(d2.name)) as Dish[]
 })
 
@@ -27,6 +43,14 @@ function activate(id: string) {
 
 function removeFilter() {
   router.push({ query: { ingredient: undefined } })
+}
+
+function isActive(path: string) {
+  return { "is-active": route.path === path }
+}
+
+function pathTo(path: string) {
+  return path + (route.query.ingredient ? `?ingredient=${route.query.ingredient}` : "")
 }
 </script>
 
@@ -44,6 +68,13 @@ function removeFilter() {
     <router-link :to="{ path: '/wordcloud' }">
       <o-icon icon="magnifying-glass" class="wordcloud"></o-icon>
     </router-link>
+  </div>
+
+  <div class="tabs is-boxed" v-if="store.state.user">
+    <ul>
+      <li :class="isActive('/recipes')"><router-link :to="pathTo('recipes')">Alle</router-link></li>
+      <li :class="isActive('/favorites')"><router-link :to="pathTo('favorites')">Favoriten</router-link></li>
+    </ul>
   </div>
 
   <ul id="recipes-list">
@@ -67,6 +98,10 @@ function removeFilter() {
     position: absolute;
     top: 0;
     cursor: pointer;
+  }
+
+  &.is-active {
+    font-weight: bold;
   }
 }
 </style>
