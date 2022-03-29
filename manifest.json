@@ -1,0 +1,22 @@
+{
+  "index.html": {
+    "file": "assets/index.f88589bf.js",
+    "src": "index.html",
+    "isEntry": true,
+    "imports": [
+      "_vendor.41e89399.js"
+    ],
+    "css": [
+      "assets/index.707ad846.css"
+    ],
+    "assets": [
+      "assets/fa-regular-400.6a274e76.woff2",
+      "assets/fa-regular-400.4e96a7e0.ttf",
+      "assets/fa-solid-900.d76fb4e8.woff2",
+      "assets/fa-solid-900.03f2986c.ttf"
+    ]
+  },
+  "_vendor.41e89399.js": {
+    "file": "assets/vendor.41e89399.js"
+  }
+}
