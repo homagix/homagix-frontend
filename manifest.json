@@ -1,11 +1,8 @@
 {
   "index.html": {
-    "file": "assets/index.cde3c42b.js",
+    "file": "assets/index.823f8879.js",
     "src": "index.html",
     "isEntry": true,
-    "imports": [
-      "_vendor.11584f90.js"
-    ],
     "css": [
       "assets/index.05b788f7.css"
     ],
@@ -15,8 +12,5 @@
       "assets/fa-solid-900.d76fb4e8.woff2",
       "assets/fa-solid-900.03f2986c.ttf"
     ]
-  },
-  "_vendor.11584f90.js": {
-    "file": "assets/vendor.11584f90.js"
   }
 }
