@@ -2,7 +2,7 @@ import { createApp } from "vue"
 import App from "@/App.vue"
 import store from "@/store"
 import createRouter from "@/router"
-import Oruga from '@oruga-ui/oruga-next'
+import Oruga from "@oruga-ui/oruga-next"
 import { bulmaConfig } from "@oruga-ui/theme-bulma"
 // Could be replaced in the future with a sass import
 import "@/assets/bulma.scss"
@@ -10,7 +10,8 @@ import "@fortawesome/fontawesome-free/scss/fontawesome.scss"
 import "@fortawesome/fontawesome-free/scss/regular.scss"
 import "@fortawesome/fontawesome-free/scss/solid.scss"
 
-if (import.meta.env.MODE === "development") {
+if (import.meta.env.VITE_MOCK_SERVER === "true") {
+  console.log("Mocking server")
   const { worker } = await import("./mocks/browser")
   worker.start({
     onUnhandledRequest(req) {
