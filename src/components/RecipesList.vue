@@ -6,7 +6,7 @@ import { useRoute, useRouter } from "vue-router"
 import Favorite from "@/components/Favorite.vue"
 
 const props = defineProps<{
-  onlyFavorites?: false
+  onlyFavorites?: boolean
 }>()
 const store = useStore()
 const router = useRouter()

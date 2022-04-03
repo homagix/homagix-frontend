@@ -8,7 +8,7 @@ import RecipesList from "@/components/RecipesList.vue"
 
 const dishes = [
   { id: "1", name: "dish 1", items: [], alwaysOnList: false, image: "dish1.jpg" },
-  { id: "2", name: "dish 2", items: [], alwaysOnList: false, image: "dish2.jpg" },
+  { id: "2", name: "dish 2", items: [], alwaysOnList: false, image: "dish2.jpg", isFavorite: true },
 ] as Dish[]
 
 const ingredients = [] as Ingredient[]
@@ -19,6 +19,25 @@ describe("RecipesList", () => {
     const { store } = createStoreMock({ dishes, ingredients }, { actions: ["SET_USER"] })
     const wrapper = mount(RecipesList, {
       global: { plugins: [store, router, Oruga] },
+    })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it("should render a message when there are no items in list", () => {
+    const router = createRouterMock(RecipesList, ["/wordcloud"])
+    const { store } = createStoreMock({ dishes: [], ingredients }, { actions: ["SET_USER"] })
+    const wrapper = mount(RecipesList, {
+      global: { plugins: [store, router, Oruga] },
+    })
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it("should render favorites", () => {
+    const router = createRouterMock(RecipesList, ["/wordcloud"])
+    const { store } = createStoreMock({ dishes, ingredients }, { actions: ["SET_USER"] })
+    const wrapper = mount(RecipesList, {
+      global: { plugins: [store, router, Oruga] },
+      props: { onlyFavorites: true },
     })
     expect(wrapper.html()).toMatchSnapshot()
   })
