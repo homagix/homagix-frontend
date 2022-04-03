@@ -1,16 +1,27 @@
 {
   "index.html": {
-    "file": "assets/index.823f8879.js",
+    "file": "assets/index.8dc2a5b2.js",
     "src": "index.html",
     "isEntry": true,
+    "dynamicImports": [
+      "src/mocks/browser.ts"
+    ],
     "css": [
-      "assets/index.cfef55fb.css"
+      "assets/index.71aadb4f.css"
     ],
     "assets": [
       "assets/fa-regular-400.6a274e76.woff2",
       "assets/fa-regular-400.4e96a7e0.ttf",
       "assets/fa-solid-900.d76fb4e8.woff2",
       "assets/fa-solid-900.03f2986c.ttf"
+    ]
+  },
+  "src/mocks/browser.ts": {
+    "file": "assets/browser.08e5bf85.js",
+    "src": "src/mocks/browser.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
     ]
   }
 }
