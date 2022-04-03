@@ -77,11 +77,13 @@ function pathTo(path: string) {
     </ul>
   </div>
 
-  <ul id="recipes-list">
+  <ul id="recipes-list" v-if="sortedDishes.length">
     <li v-for="dish in sortedDishes" :key="dish.id" @click="() => activate(dish.id)">
       <o-icon icon="utensils"></o-icon> {{ dish.name }} <Favorite :dish="dish" />
     </li>
   </ul>
+
+  <div v-else>Keine Rezepte gefunden</div>
 </template>
 
 <style scoped lang="scss">
