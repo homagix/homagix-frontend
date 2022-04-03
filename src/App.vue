@@ -110,6 +110,11 @@ h1.title {
   .navbar-burger {
     margin-left: 0;
   }
+
+  section {
+    max-width: 800px;
+    margin: 0 auto;
+  }
 }
 
 @media print {

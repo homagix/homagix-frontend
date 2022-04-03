@@ -65,8 +65,8 @@ function pathTo(path: string) {
       </span>
     </div>
 
-    <router-link :to="{ path: '/wordcloud' }">
-      <o-icon icon="magnifying-glass" class="wordcloud"></o-icon>
+    <router-link :to="{ path: '/wordcloud' }" class="wordcloud-toggle">
+      <o-icon icon="magnifying-glass"></o-icon>
     </router-link>
   </div>
 
@@ -85,7 +85,7 @@ function pathTo(path: string) {
 </template>
 
 <style scoped lang="scss">
-.wordcloud {
+.wordcloud-toggle {
   float: right;
 }
 
