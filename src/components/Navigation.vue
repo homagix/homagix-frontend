@@ -28,11 +28,22 @@ const navbarClasses = computed(() => "navbar-menu" + (props.open ? " is-active" 
 </template>
 
 <style lang="scss" scoped>
-@media (min-width: 480px) {
-  .navbar-menu.is-active {
-    position: absolute;
-    right: 0;
-    display: inline-block;
+.navbar-menu {
+  &.is-active {
+    @media (min-width: 480px) {
+      position: absolute;
+      top: 3.3rem;
+      right: 0;
+      display: inline-block;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    flex-grow: 0;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
   }
 }
 </style>

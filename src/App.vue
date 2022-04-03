@@ -27,17 +27,17 @@ function closeMenu() {
       <router-link to="/" class="navbar-item">
         <h1 class="title">Homagix</h1>
       </router-link>
-
-      <div v-if="store.state.user" class="username">
-        {{ store.state.user.name }}
-      </div>
-
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" @click.stop="toggleMenu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
     </div>
+
+    <div v-if="store.state.user" class="username">
+      {{ store.state.user.name }}
+    </div>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" @click.stop="toggleMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
 
     <Navigation :open="navbarOpen" />
   </nav>
@@ -72,7 +72,7 @@ h1.title {
   float: left;
   font-size: 28px;
   margin: 0;
-  padding: 0 30px 0 0;
+  padding: 0 5px 0 0;
 
   &:after {
     content: "";
@@ -91,12 +91,25 @@ h1.title {
 
 .username {
   font-size: 120%;
-  line-height: 3.3rem;
-  margin-left: auto;
+  flex-grow: 1;
+  text-align: right;
+  margin-top: 0.7rem;
+  padding-right: 10px;
+
+  @media screen and (min-width: 1024px) {
+    margin-top: 0.875rem;
+  }
 }
 
-#app .navbar-burger {
-  margin-left: 0;
+#app {
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .navbar-burger {
+    margin-left: 0;
+  }
 }
 
 @media print {
