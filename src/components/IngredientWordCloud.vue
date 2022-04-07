@@ -7,7 +7,7 @@ import wordcloud from "wordcloud"
 const store = useStore()
 const router = useRouter()
 
-const blackList = ["Salz", "Pfeffer", "Zucker", "Butter", "Mehl"]
+const blackList = ["Salz", "Pfeffer", "Zucker", "Butter", "Mehl", "Öl", "Olivenöl"]
 
 const ingredients = computed((): [string, number, string][] => {
   if (!store.state.ingredients.length) {
