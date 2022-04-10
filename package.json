@@ -25,7 +25,7 @@
     "@types/node": "16.11.26",
     "@typescript-eslint/eslint-plugin": "5.17.0",
     "@vitejs/plugin-vue": "2.3.1",
-    "@vue/test-utils": "2.0.0-rc.18",
+    "@vue/test-utils": "2.0.0-rc.19",
     "c8": "7.11.0",
     "canvas": "github:jschirrmacher/canvas",
     "esbuild": "0.14.30",
