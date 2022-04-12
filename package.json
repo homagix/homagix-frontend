@@ -28,7 +28,7 @@
     "@vue/test-utils": "2.0.0-rc.19",
     "c8": "7.11.0",
     "canvas": "github:jschirrmacher/canvas",
-    "esbuild": "0.14.34",
+    "esbuild": "0.14.35",
     "eslint": "8.13.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
