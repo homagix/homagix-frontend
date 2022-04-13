@@ -77,7 +77,7 @@ function pathTo(path: string) {
     </ul>
   </div>
 
-  <ul id="recipes-list" v-if="sortedDishes.length">
+  <ul class="recipes-list" v-if="sortedDishes.length">
     <li v-for="dish in sortedDishes" :key="dish.id" @click="() => activate(dish.id)">
       <o-icon icon="utensils"></o-icon> {{ dish.name }} <Favorite :dish="dish" />
     </li>
@@ -87,23 +87,51 @@ function pathTo(path: string) {
 </template>
 
 <style scoped lang="scss">
+$hover-color: #eeeeee;
+$pill-color: #eeeeee;
+
+.recipes-list li {
+  cursor: pointer;
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
 .wordcloud-toggle {
   float: right;
+  &:hover {
+    background-color: $hover-color;
+  }
 }
 
 .filter {
   display: inline;
   position: relative;
+  background-color: $pill-color;
+  padding: 0.25rem 1.3rem 0.25rem 0.75rem;
+  border-radius: 0.5rem;
 
   .remove {
     font-size: 70%;
+    color: #888888;
     position: absolute;
     top: 0;
+    right: 0;
     cursor: pointer;
-  }
 
-  &.is-active {
-    font-weight: bold;
+    &:hover {
+      background-color: darken($color: $hover-color, $amount: 10%);
+      border-radius: 50%;
+    }
+
+    .icon {
+      height: 1.3rem;
+      width: 1.3rem;
+    }
   }
+}
+
+.tabs .is-active {
+  font-weight: bold;
 }
 </style>

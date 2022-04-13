@@ -25,5 +25,9 @@ a {
   text-decoration: none;
   color: black;
   margin-right: 0.5rem;
+
+  &:hover {
+    color: #888888;
+  }
 }
 </style>

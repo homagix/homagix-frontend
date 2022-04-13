@@ -12,8 +12,9 @@ export default (store: Store) => {
     () => store.state.user,
     [setCookie(7200), setAuthorizationHeader(setAuthorization), setStore(store)]
   )
+  const env = import.meta.env
   const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
+    history: createWebHistory(env.BASE_URL),
     routes: [
       { name: "home", path: "/", redirect: "/recipes" },
       { name: "recipes", path: "/recipes", component: RecipesList },
