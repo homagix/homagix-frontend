@@ -107,10 +107,6 @@ h1.title {
     flex-wrap: wrap;
   }
 
-  .navbar-burger {
-    margin-left: 0;
-  }
-
   section {
     max-width: 800px;
     margin: 0 auto;

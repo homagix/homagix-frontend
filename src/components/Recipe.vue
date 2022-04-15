@@ -39,7 +39,8 @@ function image(dish: Dish) {
     </div>
 
     <div class="image-ingredients">
-      <div>
+      <div class="image-wrapper">
+        <o-icon icon="image"></o-icon>
         <img v-if="dish.image" :src="image(dish)" />
       </div>
       <div class="wrapper">
@@ -71,6 +72,26 @@ function image(dish: Dish) {
   width: 100%;
   margin-bottom: 0.5rem;
   column-gap: 5px;
+
+  .image-wrapper {
+    width: 100%;
+    position: relative;
+
+    .icon {
+    background: #f5f5f5;
+      position: absolute;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      font-size: 100px;
+      color: #dddddd;
+      z-index: 0;
+    }
+
+    img {
+      position: relative;
+    }
+  }
 }
 
 #ingredient-list {
