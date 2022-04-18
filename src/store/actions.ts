@@ -2,7 +2,7 @@ import { UnauthorizedError } from "@/api"
 import type { Dish } from "@/types"
 import { Context, MutationType, ActionType } from "@/store"
 import { AppError } from "@/types"
-import { loadDishes, setFavorite } from "@/api/dishes"
+import { loadDishes, setFavorite, updateDish } from "@/api/dishes"
 import { loadIngredients } from "@/api/ingredients"
 import { logoutUser, registerUser } from "@/api/user"
 
@@ -67,4 +67,10 @@ export default {
     const dishes = await Promise.all(context.state.dishes.map(mapper))
     context.commit(MutationType.LOADED_DISHES, { dishes })
   }, "Rezept konnte nicht als Favorit markiert werden"),
+
+  SAVE_DISH: catchErrors(async (context: Context, dish: Dish) => {
+    const savedDish = await updateDish(dish)
+    const dishes = context.state.dishes.map(d => (d.id === savedDish.id ? savedDish : d))
+    context.commit(MutationType.LOADED_DISHES, { dishes })
+  }, "Rezept konnte nicht gespeichert werden"),
 }

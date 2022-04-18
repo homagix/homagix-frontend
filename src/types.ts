@@ -24,6 +24,7 @@ export type Dish = {
   items: Item[]
   alwaysOnList: boolean
   isFavorite?: boolean
+  isEditable: boolean
 }
 
 export type Ingredient = {
