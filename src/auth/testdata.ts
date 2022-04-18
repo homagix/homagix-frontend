@@ -1,6 +1,6 @@
 import { vi } from "vitest"
 import { createStore } from "vuex"
-import { mount } from "@vue/test-utils"
+import { shallowMount } from "@vue/test-utils"
 import { createRouterMock } from "../mocks/router"
 import type { User } from "."
 
@@ -20,6 +20,6 @@ export function mountComponent<C>(component: C) {
       REGISTER_USER: registerUserAction,
     },
   })
-  const wrapper = mount(component, { global: { plugins: [store, router] } })
+  const wrapper = shallowMount(component, { global: { plugins: [store, router] } })
   return { wrapper, registerUserAction, router }
 }

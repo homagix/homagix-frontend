@@ -1,7 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps<{
+  icon?: string
+}>()
+</script>
 
 <template>
   <button>
+    <o-icon v-if="icon" :icon="props.icon"></o-icon>
     <slot />
   </button>
 </template>
@@ -11,7 +16,7 @@ button {
   padding: 5px 20px;
   border: 2px solid #aaaaaa;
   border-radius: 4px;
-  font-size: 1em;
+  font-size: 1rem;
   cursor: pointer;
   background: white;
 
@@ -22,6 +27,14 @@ button {
   &:active {
     background-color: #dddddd;
   }
+
+  &::v-deep .icon {
+    margin: -3px 3px -3px -5px;
+  }
+}
+
+button + button {
+  margin-left: 10px;
 }
 
 button.inline {
