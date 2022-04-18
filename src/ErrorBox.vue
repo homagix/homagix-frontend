@@ -5,15 +5,15 @@ import { ActionType, useStore } from "./store"
 const store = useStore()
 const error = computed(() => store.state.error)
 
-function clearError() {
+function clearErrors() {
   store.dispatch(ActionType.CLEAR_ERROR)
 }
 </script>
 
 <template>
   <div v-if="error" class="error-container">
-    <span @click="clearError">×</span>
-    <router-link v-if="error.link" :to="error.link" @click="clearError">{{ error.message }}</router-link>
+    <span class="clearErrors" @click="clearErrors">×</span>
+    <router-link v-if="error.link" :to="error.link" @click="clearErrors">{{ error.message }}</router-link>
     <span v-else>{{ error.message }}</span>
   </div>
 </template>
@@ -24,7 +24,7 @@ function clearError() {
   margin: 10px;
   padding: 10px;
 
-  span {
+  .clearErrors {
     cursor: pointer;
     float: right;
   }
