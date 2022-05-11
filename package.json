@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/node": "16.11.34",
     "@typescript-eslint/eslint-plugin": "5.23.0",
-    "@vitejs/plugin-vue": "2.3.2",
+    "@vitejs/plugin-vue": "2.3.3",
     "@vue/test-utils": "2.0.0-rc.21",
     "c8": "7.11.2",
     "canvas": "github:jschirrmacher/canvas",
