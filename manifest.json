@@ -1,13 +1,13 @@
 {
   "index.html": {
-    "file": "assets/index.da24b8d2.js",
+    "file": "assets/index.930f6297.js",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
       "src/mocks/browser.ts"
     ],
     "css": [
-      "assets/index.7729f509.css"
+      "assets/index.20f4654e.css"
     ],
     "assets": [
       "assets/fa-regular-400.6a274e76.woff2",
@@ -17,7 +17,7 @@
     ]
   },
   "src/mocks/browser.ts": {
-    "file": "assets/browser.d55f95da.js",
+    "file": "assets/browser.ea5ab477.js",
     "src": "src/mocks/browser.ts",
     "isDynamicEntry": true,
     "imports": [
