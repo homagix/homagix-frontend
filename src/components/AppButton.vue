@@ -28,7 +28,7 @@ button {
     background-color: #dddddd;
   }
 
-  &::v-deep .icon {
+  &:deep(.icon) {
     margin: -3px 3px -3px -5px;
   }
 }

@@ -3,7 +3,7 @@ import { computed } from "vue"
 import { Dish } from "@/types"
 import { useStore } from "@/store"
 import { useRoute, useRouter } from "vue-router"
-import Favorite from "@/components/Favorite.vue"
+import FavoriteButton from "@/components/FavoriteButton.vue"
 
 const props = defineProps<{
   onlyFavorites?: boolean
@@ -79,7 +79,7 @@ function pathTo(path: string) {
 
   <ul class="recipes-list" v-if="sortedDishes.length">
     <li v-for="dish in sortedDishes" :key="dish.id" @click="() => activate(dish.id)">
-      <o-icon icon="utensils"></o-icon> {{ dish.name }} <Favorite :dish="dish" />
+      <o-icon icon="utensils"></o-icon> {{ dish.name }} <FavoriteButton :dish="dish" />
     </li>
   </ul>
 

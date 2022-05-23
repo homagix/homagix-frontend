@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue"
 import { ActionType, useStore } from "@/store"
-import Navigation from "./components/Navigation.vue"
+import AppNavigation from "./components/AppNavigation.vue"
 import ErrorBox from "./ErrorBox.vue"
 
 const store = useStore()
@@ -39,7 +39,7 @@ function closeMenu() {
       <span aria-hidden="true"></span>
     </a>
 
-    <Navigation :open="navbarOpen" />
+    <AppNavigation :open="navbarOpen" />
   </nav>
 
   <ErrorBox />

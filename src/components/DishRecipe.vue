@@ -5,7 +5,7 @@ import { useRoute, useRouter } from "vue-router"
 import { Dish } from "@/types"
 import { getImageUrl } from "@/api"
 import AppButton from "./AppButton.vue"
-import Favorite from "./Favorite.vue"
+import FavoriteButton from "./FavoriteButton.vue"
 
 const store = useStore()
 const route = useRoute()
@@ -35,7 +35,7 @@ function image(dish: Dish) {
   <section v-if="dish">
     <div class="title is-4">
       <span>{{ dish.name }}</span>
-      <Favorite :dish="dish" />
+      <FavoriteButton :dish="dish" />
     </div>
 
     <div class="image-ingredients">
@@ -78,7 +78,7 @@ function image(dish: Dish) {
     position: relative;
 
     .icon {
-    background: #f5f5f5;
+      background: #f5f5f5;
       position: absolute;
       display: flex;
       width: 100%;
