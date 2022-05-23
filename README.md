@@ -22,7 +22,7 @@ Dishes are stored in [the server](https://github.com/jschirrmacher/homagix-serve
     npm start
     open http://localhost:3000/
 
-### developmen version
+### development version
 
 If you want to install a development version, use the following npm commands after cloning instead:
 

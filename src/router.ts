@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router"
 import RecipesList from "@/components/RecipesList.vue"
-import Recipe from "@/components/Recipe.vue"
+import DishRecipe from "@/components/DishRecipe.vue"
 import IngredientWordCloud from "@/components/IngredientWordCloud.vue"
 import NotFoundPage from "@/components/NotFoundPage.vue"
 import { Store } from "@/store"
@@ -19,7 +19,7 @@ export default (store: Store) => {
       { name: "home", path: "/", redirect: "/recipes" },
       { name: "recipes", path: "/recipes", component: RecipesList },
       { name: "favorites", path: "/favorites", component: RecipesList, props: { onlyFavorites: true } },
-      { name: "recipe", path: "/recipes/:id", component: Recipe },
+      { name: "recipe", path: "/recipes/:id", component: DishRecipe },
       { name: "wordcloud", path: "/wordcloud", component: IngredientWordCloud },
 
       ...auth.routes,

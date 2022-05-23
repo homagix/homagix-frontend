@@ -6,8 +6,8 @@ exports[`RecipesList > should render 1`] = `
 </div>
 <!--v-if-->
 <ul class=\\"recipes-list\\" data-v-2a5a893a=\\"\\">
-  <li data-v-2a5a893a=\\"\\"><span class=\\"o-icon\\" data-v-2a5a893a=\\"\\"><i class=\\"mdi mdi-utensils mdi-24px\\"></i></span> dish 1 <a href=\\"#\\" class=\\"favorite\\" title=\\"Zur Favoritenliste hinzufügen\\" data-v-4723bbcc=\\"\\" data-v-2a5a893a=\\"\\">☆</a></li>
-  <li data-v-2a5a893a=\\"\\"><span class=\\"o-icon\\" data-v-2a5a893a=\\"\\"><i class=\\"mdi mdi-utensils mdi-24px\\"></i></span> dish 2 <a href=\\"#\\" class=\\"favorite\\" title=\\"Von der Favoritenliste entfernen\\" data-v-4723bbcc=\\"\\" data-v-2a5a893a=\\"\\">★</a></li>
+  <li data-v-2a5a893a=\\"\\"><span class=\\"o-icon\\" data-v-2a5a893a=\\"\\"><i class=\\"mdi mdi-utensils mdi-24px\\"></i></span> dish 1 <a href=\\"#\\" class=\\"favorite\\" title=\\"Zur Favoritenliste hinzufügen\\" data-v-6c461f1e=\\"\\" data-v-2a5a893a=\\"\\">☆</a></li>
+  <li data-v-2a5a893a=\\"\\"><span class=\\"o-icon\\" data-v-2a5a893a=\\"\\"><i class=\\"mdi mdi-utensils mdi-24px\\"></i></span> dish 2 <a href=\\"#\\" class=\\"favorite\\" title=\\"Von der Favoritenliste entfernen\\" data-v-6c461f1e=\\"\\" data-v-2a5a893a=\\"\\">★</a></li>
 </ul>"
 `;
 
@@ -25,6 +25,6 @@ exports[`RecipesList > should render favorites 1`] = `
 </div>
 <!--v-if-->
 <ul class=\\"recipes-list\\" data-v-2a5a893a=\\"\\">
-  <li data-v-2a5a893a=\\"\\"><span class=\\"o-icon\\" data-v-2a5a893a=\\"\\"><i class=\\"mdi mdi-utensils mdi-24px\\"></i></span> dish 2 <a href=\\"#\\" class=\\"favorite\\" title=\\"Von der Favoritenliste entfernen\\" data-v-4723bbcc=\\"\\" data-v-2a5a893a=\\"\\">★</a></li>
+  <li data-v-2a5a893a=\\"\\"><span class=\\"o-icon\\" data-v-2a5a893a=\\"\\"><i class=\\"mdi mdi-utensils mdi-24px\\"></i></span> dish 2 <a href=\\"#\\" class=\\"favorite\\" title=\\"Von der Favoritenliste entfernen\\" data-v-6c461f1e=\\"\\" data-v-2a5a893a=\\"\\">★</a></li>
 </ul>"
 `;
