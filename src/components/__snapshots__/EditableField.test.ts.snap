@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`EditableField > should render editable 1`] = `"<span class=\\"\\" contenteditable=\\"true\\" data-v-09beb9f6=\\"\\">abc</span>"`;
+
+exports[`EditableField > should render non-editable 1`] = `"<span class=\\"\\" contenteditable=\\"false\\" data-v-09beb9f6=\\"\\">abc</span>"`;
+
+exports[`EditableField > should render numeric fields 1`] = `"<span class=\\"number\\" contenteditable=\\"true\\" data-v-09beb9f6=\\"\\">123</span>"`;

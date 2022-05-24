@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`AutocompleteField > should render as expected 1`] = `
+"<div class=\\"autocomplete\\" id=\\"field-id\\" data-v-46e78e1c=\\"\\"><input type=\\"text\\" role=\\"combobox\\" autocomplete=\\"off\\" autocapitalize=\\"off\\" autocorrect=\\"off\\" spellcheck=\\"false\\" aria-autocomplete=\\"list\\" aria-haspopup=\\"listbox\\" aria-owns=\\"field-id-result-list\\" aria-expanded=\\"false\\" data-v-46e78e1c=\\"\\"><select role=\\"listbox\\" id=\\"field-id-result-list\\" size=\\"2\\" data-v-46e78e1c=\\"\\">
+    <option data-v-46e78e1c=\\"\\">first</option>
+  </select></div>"
+`;
