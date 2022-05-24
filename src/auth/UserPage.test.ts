@@ -1,4 +1,3 @@
-import { mount } from "@vue/test-utils"
 import { describe, expect, it, vi } from "vitest"
 import UserPage from "@/auth/UserPage.vue"
 import { mountComponent } from "./testdata"
