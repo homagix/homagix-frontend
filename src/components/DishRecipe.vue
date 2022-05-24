@@ -1,25 +1,32 @@
 <script setup lang="ts">
-import { computed } from "vue"
+import { computed, ref } from "vue"
 import { useStore } from "@/store"
 import { useRoute, useRouter } from "vue-router"
 import { Dish } from "@/types"
 import { getImageUrl } from "@/api"
 import AppButton from "./AppButton.vue"
 import FavoriteButton from "./FavoriteButton.vue"
+import { VueShowdown } from "vue-showdown"
+import IngredientsList from "./IngredientsList.vue"
 
 const store = useStore()
 const route = useRoute()
 const router = useRouter()
 
-const dish = computed(() => store.state.dishes.find(dish => dish.id === route.params.id))
+const showdownOptions = {
+  parseImgDimensions: true,
+  simplifiedAutoLink: true,
+  openLinksInNewWindow: true,
+}
 
-function ingredients() {
-  return dish.value?.items.map(item => {
-    return {
-      ...store.state.ingredients?.find(ingredient => ingredient.id === item.id),
-      amount: item.amount,
-    }
-  })
+const dish = computed(() => ({ ...store.state.dishes.find(dish => dish.id === route.params.id) } as Dish))
+const description = computed(() => dish.value.recipe || "Noch gibt es keine Beschreibung zu diesem Gericht")
+
+const ingredients = ref(dish.value.items?.map(getIngredient))
+
+function getIngredient(item: Item): Ingredient {
+  const ingredient = store.state.ingredients?.find(ingredient => ingredient.id === item.id) as Ingredient
+  return { ...ingredient, amount: item.amount }
 }
 
 function backToList() {
@@ -43,18 +50,14 @@ function image(dish: Dish) {
         <o-icon icon="image"></o-icon>
         <img v-if="dish.image" :src="image(dish)" />
       </div>
-      <div class="wrapper">
-        <div id="ingredient-list">
-          <template v-for="ingredient in ingredients()" :key="ingredient.id">
-            <span>{{ ingredient.amount }}</span>
-            <span>{{ ingredient.unit }}</span>
-            <span>{{ ingredient.name }}</span>
-          </template>
-        </div>
+
+      <div>
+        <p class="title is-6">Zutaten:</p>
+        <IngredientsList :ingredients="ingredients" />
       </div>
     </div>
 
-    <div id="description">{{ dish.recipe || "Noch gibt es keine Beschreibung zu diesem Gericht" }}</div>
+    <VueShowdown class="description" :markdown="description" flavor="github" :options="showdownOptions" />
 
     <AppButton @click="backToList">Zurück</AppButton>
   </section>
@@ -75,6 +78,7 @@ function image(dish: Dish) {
 
   .image-wrapper {
     width: 100%;
+    min-height: 300px;
     position: relative;
 
     .icon {
@@ -94,24 +98,11 @@ function image(dish: Dish) {
   }
 }
 
-#ingredient-list {
-  display: inline-grid;
-  grid-template-rows: auto;
-  grid-template-columns: auto auto 1fr;
-  border: 1px solid #888;
-  padding: 3px;
-  align-content: flex-start;
-
-  > * {
-    padding: 3px;
-  }
-
-  > *:nth-child(3n-2) {
-    text-align: right;
-  }
-}
-
-#description {
+.description {
   margin-bottom: 1rem;
+
+  &:deep(ol) {
+    padding-left: 30px;
+  }
 }
 </style>

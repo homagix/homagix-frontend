@@ -22,6 +22,8 @@ defineProps<{ ingredients: Ingredient[] }>()
   border: 1px solid #888;
   padding: 3px;
   align-content: flex-start;
+  min-height: 300px;
+  min-width: 200px;
 
   > * {
     padding: 3px;
