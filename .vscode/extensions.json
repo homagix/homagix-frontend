@@ -2,6 +2,7 @@
   "recommendations": [
     "johnsoncodehk.volar",
     "dbaeumer.vscode-eslint",
-    "mhutchie.git-graph"
+    "mhutchie.git-graph",
+    "ZixuanChen.vitest-explorer"
   ]
 }
