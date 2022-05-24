@@ -1,7 +1,21 @@
 // Vitest Snapshot v1
 
-exports[`IngredientsList > should render a list with an editable item and with a new item 1`] = `"<div class=\\"ingredient-list\\" data-v-560a7300=\\"\\"><span data-v-560a7300=\\"\\">8</span><span data-v-560a7300=\\"\\">L</span><span data-v-560a7300=\\"\\">abc</span></div>"`;
+exports[`IngredientsList > should render a list with an editable item and with a new item 1`] = `
+"<div class=\\"ingredient-list\\" data-v-560a7300=\\"\\">
+  <ingredients-list-row-stub ingredient=\\"[object Object]\\" editable=\\"true\\" deletable=\\"true\\" class=\\"row\\" data-v-560a7300=\\"\\"></ingredients-list-row-stub>
+  <ingredients-list-row-stub ingredient=\\"[object Object]\\" editable=\\"true\\" deletable=\\"false\\" class=\\"row new\\" data-v-560a7300=\\"\\"></ingredients-list-row-stub>
+</div>"
+`;
 
-exports[`IngredientsList > should render a list with an item 1`] = `"<div class=\\"ingredient-list\\" data-v-560a7300=\\"\\"><span data-v-560a7300=\\"\\">8</span><span data-v-560a7300=\\"\\">L</span><span data-v-560a7300=\\"\\">abc</span></div>"`;
+exports[`IngredientsList > should render a list with an item 1`] = `
+"<div class=\\"ingredient-list\\" data-v-560a7300=\\"\\">
+  <ingredients-list-row-stub ingredient=\\"[object Object]\\" editable=\\"false\\" deletable=\\"false\\" class=\\"row\\" data-v-560a7300=\\"\\"></ingredients-list-row-stub>
+  <!--v-if-->
+</div>"
+`;
 
-exports[`IngredientsList > should render an empty list 1`] = `"<div class=\\"ingredient-list\\" data-v-560a7300=\\"\\"></div>"`;
+exports[`IngredientsList > should render an empty list without edit mode 1`] = `
+"<div class=\\"ingredient-list\\" data-v-560a7300=\\"\\">
+  <!--v-if-->
+</div>"
+`;
