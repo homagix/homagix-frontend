@@ -2,7 +2,7 @@
 import { computed, ref } from "vue"
 import { useStore } from "@/store"
 import { useRoute, useRouter } from "vue-router"
-import { Dish } from "@/types"
+import { Dish, Ingredient, Item } from "@/types"
 import { getImageUrl } from "@/api"
 import AppButton from "./AppButton.vue"
 import FavoriteButton from "./FavoriteButton.vue"
