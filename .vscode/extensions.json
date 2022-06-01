@@ -1,8 +1,8 @@
 {
   "recommendations": [
-    "johnsoncodehk.volar",
     "dbaeumer.vscode-eslint",
     "mhutchie.git-graph",
-    "ZixuanChen.vitest-explorer"
+    "zixuanchen.vitest-explorer",
+    "MisterJ.vue-volar-extention-pack"
   ]
 }
