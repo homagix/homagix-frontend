@@ -11,7 +11,7 @@ function getRoute(path: string, user: User | null = null, receivers: TokenReceiv
   return { route, authRouter }
 }
 
-type FetchFunction = (input: RequestInfo, init?: RequestInit | undefined) => Promise<Response>
+type FetchFunction = (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>
 
 function mockFetch(status: number, result: object) {
   const fetch = () =>
