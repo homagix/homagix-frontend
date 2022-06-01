@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue"
 import { useStore } from "@/store"
-import { useRoute, useRouter } from "vue-router"
+import { useRouter } from "vue-router"
 import { Dish, Ingredient, Item } from "@/types"
 import { getImageUrl } from "@/api"
 import AppButton from "./AppButton.vue"
@@ -9,8 +9,9 @@ import FavoriteButton from "./FavoriteButton.vue"
 import { VueShowdown } from "vue-showdown"
 import IngredientsList from "./IngredientsList.vue"
 
+const props = defineProps<{ id: string }>()
+
 const store = useStore()
-const route = useRoute()
 const router = useRouter()
 
 const showdownOptions = {
@@ -19,7 +20,7 @@ const showdownOptions = {
   openLinksInNewWindow: true,
 }
 
-const dish = computed(() => ({ ...store.state.dishes.find(dish => dish.id === route.params.id) } as Dish))
+const dish = computed(() => ({ ...store.state.dishes.find(dish => dish.id === props.id) } as Dish))
 const description = computed(() => dish.value.recipe || "Noch gibt es keine Beschreibung zu diesem Gericht")
 
 const ingredients = ref(dish.value.items?.map(getIngredient))
