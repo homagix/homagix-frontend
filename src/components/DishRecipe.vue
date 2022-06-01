@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed, ref } from "vue"
-import { useStore } from "@/store"
+import { computed, ref, watch } from "vue"
+import { ActionType, useStore } from "@/store"
 import { useRouter } from "vue-router"
-import { Dish, Ingredient, Item } from "@/types"
+import type { Dish, Ingredient, Item } from "@/types"
 import { getImageUrl } from "@/api"
 import AppButton from "./AppButton.vue"
 import FavoriteButton from "./FavoriteButton.vue"
@@ -21,8 +21,11 @@ const showdownOptions = {
 }
 
 const dish = computed(() => ({ ...store.state.dishes.find(dish => dish.id === props.id) } as Dish))
+const image = getImageUrl(dish.value.image as string)
 const description = computed(() => dish.value.recipe || "Noch gibt es keine Beschreibung zu diesem Gericht")
 
+const editMode = ref(false)
+const editedDish = ref({ ...dish.value })
 const ingredients = ref(dish.value.items?.map(getIngredient))
 
 function getIngredient(item: Item): Ingredient {
@@ -30,26 +33,45 @@ function getIngredient(item: Item): Ingredient {
   return { ...ingredient, amount: item.amount }
 }
 
+watch(dish, () => (ingredients.value = dish.value.items?.map(getIngredient)))
+
 function backToList() {
-  router.push({ name: "recipes" })
+  router.push("/recipes")
 }
 
-function image(dish: Dish) {
-  return getImageUrl(dish.image)
+function revert() {
+  editMode.value = false
+}
+
+function edit() {
+  if (dish.value?.isEditable) {
+    editMode.value = true
+  }
+}
+
+function listChange(newList: Ingredient[]) {
+  ingredients.value = newList
+  editedDish.value.items = newList.map(ingredient => ({ id: ingredient.id, amount: ingredient.amount }))
+}
+
+async function save() {
+  await store.dispatch(ActionType.SAVE_DISH, editedDish.value)
+  editMode.value = false
 }
 </script>
 
 <template>
   <section v-if="dish">
     <div class="title is-4">
-      <span>{{ dish.name }}</span>
+      <span v-if="!editMode">{{ dish.name }}</span>
+      <input v-else v-model="editedDish.name" />
       <FavoriteButton :dish="dish" />
     </div>
 
     <div class="image-ingredients">
       <div class="image-wrapper">
         <o-icon icon="image"></o-icon>
-        <img v-if="dish.image" :src="image(dish)" />
+        <img v-if="dish.image" :src="image" />
       </div>
 
       <div>
@@ -58,24 +80,36 @@ function image(dish: Dish) {
       </div>
     </div>
 
-    <VueShowdown class="description" :markdown="description" flavor="github" :options="showdownOptions" />
+    <VueShowdown
+      v-if="!editMode"
+      class="description"
+      :markdown="description"
+      flavor="github"
+      :options="showdownOptions"
+    />
+    <textarea v-else v-model="editedDish.recipe" />
 
-    <AppButton @click="backToList">Zurück</AppButton>
+    <div class="buttons">
+      <AppButton icon="list" v-if="!editMode" @click="backToList">Zurück</AppButton>
+      <AppButton icon="xmark" v-if="editMode" @click="revert">Verwerfen</AppButton>
+      <AppButton icon="edit" v-if="dish.isEditable && !editMode" @click="edit">Bearbeiten</AppButton>
+      <AppButton icon="save" v-if="editMode" @click="save">Speichern</AppButton>
+    </div>
   </section>
 </template>
 
 <style scoped lang="scss">
 .title,
 .image-ingredients {
-  display: flex;
-  justify-content: space-between;
-}
-
-.image-ingredients {
   position: relative;
   width: 100%;
   margin-bottom: 0.5rem;
   column-gap: 5px;
+
+  @media (min-width: 800px) {
+    display: flex;
+    justify-content: space-between;
+  }
 
   .image-wrapper {
     width: 100%;
@@ -105,5 +139,24 @@ function image(dish: Dish) {
   &:deep(ol) {
     padding-left: 30px;
   }
+}
+
+textarea {
+  width: 100%;
+  height: 300px;
+  font-family: Courier, fixed;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  padding: 0.5rem;
+}
+
+.title input {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.buttons {
+  padding-bottom: 1rem;
 }
 </style>

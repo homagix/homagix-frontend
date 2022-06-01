@@ -1,0 +1,25 @@
+// Vitest Snapshot v1
+
+exports[`DishRecipe > should render as expected 1`] = `
+"<section data-v-172029f8=\\"\\">
+  <div class=\\"title is-4\\" data-v-172029f8=\\"\\"><span data-v-172029f8=\\"\\">Guacamole</span>
+    <favorite-button-stub dish=\\"[object Object]\\" data-v-172029f8=\\"\\"></favorite-button-stub>
+  </div>
+  <div class=\\"image-ingredients\\" data-v-172029f8=\\"\\">
+    <div class=\\"image-wrapper\\" data-v-172029f8=\\"\\">
+      <o-icon-stub icon=\\"image\\" clickable=\\"false\\" spin=\\"false\\" both=\\"false\\" data-v-172029f8=\\"\\"></o-icon-stub><img src=\\"https://homagix-server.dilab.co/images/guacamole.jpg\\" data-v-172029f8=\\"\\">
+    </div>
+    <div data-v-172029f8=\\"\\">
+      <p class=\\"title is-6\\" data-v-172029f8=\\"\\">Zutaten:</p>
+      <ingredients-list-stub ingredients=\\"[object Object],[object Object]\\" data-v-172029f8=\\"\\"></ingredients-list-stub>
+    </div>
+  </div>
+  <vue-showdown-stub markdown=\\"Noch gibt es keine Beschreibung zu diesem Gericht\\" tag=\\"div\\" flavor=\\"github\\" options=\\"[object Object]\\" vuetemplate=\\"false\\" vuetemplatedata=\\"[object Object]\\" class=\\"description\\" data-v-172029f8=\\"\\"></vue-showdown-stub>
+  <div class=\\"buttons\\" data-v-172029f8=\\"\\">
+    <app-button-stub icon=\\"list\\" data-v-172029f8=\\"\\"></app-button-stub>
+    <!--v-if-->
+    <app-button-stub icon=\\"edit\\" data-v-172029f8=\\"\\"></app-button-stub>
+    <!--v-if-->
+  </div>
+</section>"
+`;
