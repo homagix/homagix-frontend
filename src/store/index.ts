@@ -1,4 +1,4 @@
-import { Store as VuexStore, useStore as baseUseStore, createStore, ActionContext } from "vuex"
+import { Store as VuexStore, useStore as baseUseStore, createStore, ActionContext, GetterTree } from "vuex"
 import mutations from "@/store/mutations"
 import actions from "@/store/actions"
 import getters from "@/store/getters"
@@ -38,7 +38,7 @@ type MutationsProp = {
 }
 
 export type Context = Omit<ActionContext<State, State>, "commit"> & MutationsProp
-export type Store = VuexStore<State>
+export type Store = VuexStore<State> & { getters: GetterTree<Store, Store> }
 
 export function useStore(): Store {
   return baseUseStore()
