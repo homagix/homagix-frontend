@@ -9,6 +9,7 @@ const state = {
   error: null as AppError | null,
   dishes: [] as Dish[],
   ingredients: [] as Ingredient[],
+  units: ["Stk", "g", "ml", "Bund", "Glas"],
   ...auth,
 }
 
