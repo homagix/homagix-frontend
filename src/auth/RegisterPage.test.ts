@@ -16,11 +16,11 @@ describe("RegisterPage", () => {
   })
 
   it("should dispatch REGISTER_USER action if button is clicked", () => {
-    const { wrapper, registerUserAction } = mountComponent(RegisterPage)
+    const { wrapper, actionMocks } = mountComponent(RegisterPage)
     wrapper.find("input").setValue("luigi")
     wrapper.find("#register-button").trigger("click")
-    expect(registerUserAction).toHaveBeenCalledOnce()
-    expect(registerUserAction).toHaveBeenCalledWith(expect.any(Object), "luigi")
+    expect(actionMocks.REGISTER_USER).toHaveBeenCalledOnce()
+    expect(actionMocks.REGISTER_USER).toHaveBeenCalledWith(expect.any(Object), "luigi")
   })
 
   it("should got to /my page after registration", async () => {

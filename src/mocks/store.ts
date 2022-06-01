@@ -1,7 +1,10 @@
+import { Store } from "@/store";
 import { vi } from "vitest"
 import { createStore } from "vuex"
 
-export function createStoreMock(state: object = {}, options: { actions?: string[]; mutations?: string[] } = {}) {
+export type StoreMockOptions = { actions?: string[]; mutations?: string[] }
+
+export function createStoreMock(state: object = {}, options: StoreMockOptions = {}) {
   function createMocksRecord(names?: string[]) {
     if (!names) {
       return undefined
@@ -17,6 +20,6 @@ export function createStoreMock(state: object = {}, options: { actions?: string[
     },
     actions: actionMocks,
     mutations: mutationMocks,
-  })
+  }) as Store
   return { store, actionMocks, mutationMocks }
 }
