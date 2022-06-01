@@ -1,4 +1,3 @@
-import { vi } from "vitest"
 import type { User } from "."
 import { mountComponent as mount } from "@/mocks"
 
@@ -8,7 +7,6 @@ export const token =
 export const user: User = { id: "123", name: "abc", accessCode: "456" }
 
 export function mountComponent<C>(component: C, shallow = true) {
-  const registerUserAction = vi.fn()
   const { wrapper, router, store, actionMocks, mutationMocks } = mount(component, {
     shallow,
     extraPaths: ["/my", "/register"],
