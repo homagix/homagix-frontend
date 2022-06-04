@@ -45,7 +45,7 @@
     "vitest": "0.13.1",
     "vue-router": "4.0.15",
     "vue-showdown": "^3.3.0",
-    "vue-tsc": "0.35.2",
+    "vue-tsc": "0.36.1",
     "vuex": "4.0.2",
     "wordcloud": "^1.2.2"
   },
