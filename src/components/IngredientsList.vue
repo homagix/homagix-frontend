@@ -5,12 +5,15 @@ defineProps<{ ingredients: Ingredient[] }>()
 </script>
 
 <template>
+  <div class="box">
+    <h2 class="subtitle">Zutaten</h2>
   <div class="ingredient-list">
     <template v-for="ingredient in ingredients" :key="ingredient.id">
       <span>{{ ingredient.amount }}</span>
       <span>{{ ingredient.unit }}</span>
       <span>{{ ingredient.name }}</span>
     </template>
+  </div>
   </div>
 </template>
 
@@ -19,8 +22,6 @@ defineProps<{ ingredients: Ingredient[] }>()
   display: inline-grid;
   grid-template-rows: auto;
   grid-template-columns: auto auto 1fr;
-  border: 1px solid #888;
-  padding: 3px;
   align-content: flex-start;
   min-height: 300px;
   min-width: 200px;
