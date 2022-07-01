@@ -1,0 +1,50 @@
+// Vitest Snapshot v1
+
+exports[`IngredientsListRow > in edit mode > should render a delete button if requested 1`] = `
+"<div class=\\"row editable\\" data-v-0f750a6a=\\"\\"><span class=\\"number\\" contenteditable=\\"true\\" data-v-09beb9f6=\\"\\" data-v-0f750a6a=\\"\\">2</span><select disabled=\\"\\" data-v-0f750a6a=\\"\\">
+    <option data-v-0f750a6a=\\"\\">Stk</option>
+    <option data-v-0f750a6a=\\"\\">g</option>
+    <option data-v-0f750a6a=\\"\\">ml</option>
+    <option data-v-0f750a6a=\\"\\">Bund</option>
+    <option data-v-0f750a6a=\\"\\">Glas</option>
+  </select><span class=\\"\\" contenteditable=\\"false\\" data-v-09beb9f6=\\"\\" data-v-0f750a6a=\\"\\">abc</span><span class=\\"icon delete\\" data-v-0f750a6a=\\"\\"></span></div>"
+`;
+
+exports[`IngredientsListRow > in edit mode > should render in editable mode 1`] = `
+"<div class=\\"row editable\\" data-v-0f750a6a=\\"\\"><span class=\\"number\\" contenteditable=\\"true\\" data-v-09beb9f6=\\"\\" data-v-0f750a6a=\\"\\">2</span><select disabled=\\"\\" data-v-0f750a6a=\\"\\">
+    <option data-v-0f750a6a=\\"\\">Stk</option>
+    <option data-v-0f750a6a=\\"\\">g</option>
+    <option data-v-0f750a6a=\\"\\">ml</option>
+    <option data-v-0f750a6a=\\"\\">Bund</option>
+    <option data-v-0f750a6a=\\"\\">Glas</option>
+  </select><span class=\\"\\" contenteditable=\\"false\\" data-v-09beb9f6=\\"\\" data-v-0f750a6a=\\"\\">abc</span>
+  <!--v-if-->
+</div>"
+`;
+
+exports[`IngredientsListRow > in edit mode > with a new item > should show editable fields 1`] = `
+"<div class=\\"row editable\\" data-v-0f750a6a=\\"\\"><span class=\\"number\\" contenteditable=\\"true\\" data-v-09beb9f6=\\"\\" data-v-0f750a6a=\\"\\">3</span><select data-v-0f750a6a=\\"\\">
+    <option data-v-0f750a6a=\\"\\">Stk</option>
+    <option data-v-0f750a6a=\\"\\">g</option>
+    <option data-v-0f750a6a=\\"\\">ml</option>
+    <option data-v-0f750a6a=\\"\\">Bund</option>
+    <option data-v-0f750a6a=\\"\\">Glas</option>
+  </select>
+  <div class=\\"autocomplete\\" id=\\"item-name\\" value=\\"def\\" data-v-46e78e1c=\\"\\" data-v-0f750a6a=\\"\\"><input type=\\"text\\" role=\\"combobox\\" autocomplete=\\"off\\" autocapitalize=\\"off\\" autocorrect=\\"off\\" spellcheck=\\"false\\" aria-autocomplete=\\"list\\" aria-haspopup=\\"listbox\\" aria-owns=\\"item-name-result-list\\" aria-expanded=\\"false\\" data-v-46e78e1c=\\"\\"><select role=\\"listbox\\" id=\\"item-name-result-list\\" size=\\"2\\" data-v-46e78e1c=\\"\\"></select></div>
+  <!--v-if-->
+</div>"
+`;
+
+exports[`IngredientsListRow > in view mode > should render 1`] = `
+"<div class=\\"row\\" data-v-0f750a6a=\\"\\">
+  <editable-field-stub type=\\"number\\" editable=\\"false\\" value=\\"2\\" data-v-0f750a6a=\\"\\"></editable-field-stub><select disabled=\\"\\" data-v-0f750a6a=\\"\\">
+    <option data-v-0f750a6a=\\"\\">Stk</option>
+    <option data-v-0f750a6a=\\"\\">g</option>
+    <option data-v-0f750a6a=\\"\\">ml</option>
+    <option data-v-0f750a6a=\\"\\">Bund</option>
+    <option data-v-0f750a6a=\\"\\">Glas</option>
+  </select>
+  <editable-field-stub editable=\\"false\\" value=\\"abc\\" data-v-0f750a6a=\\"\\"></editable-field-stub>
+  <!--v-if-->
+</div>"
+`;
