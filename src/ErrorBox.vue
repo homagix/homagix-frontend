@@ -11,22 +11,14 @@ function clearErrors() {
 </script>
 
 <template>
-  <div v-if="error" class="error-container">
-    <span class="clearErrors" @click="clearErrors">×</span>
+  <o-notification root-class="errorBox" v-if="error" closable variant="danger" @close="clearErrors">
     <router-link v-if="error.link" :to="error.link" @click="clearErrors">{{ error.message }}</router-link>
     <span v-else>{{ error.message }}</span>
-  </div>
+  </o-notification>
 </template>
 
-<style lang="scss" scoped>
-.error-container {
-  border: 2px solid red;
-  margin: 10px;
-  padding: 10px;
-
-  .clearErrors {
-    cursor: pointer;
-    float: right;
-  }
+<style scoped lang="scss">
+.errorBox {
+  margin: 1rem;
 }
 </style>

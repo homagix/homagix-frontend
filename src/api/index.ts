@@ -1,7 +1,7 @@
 type FetchData = Record<string, unknown>
 type FetchOptions = Record<string, string | string[] | Record<string, string>>
 
-const basePath = localStorage.getItem("basePath") || "https://homagix-server.dilab.co"
+const basePath = localStorage.getItem("basePath") || "/api"
 
 type APIErrorDetails = { status: number; content?: string }
 
