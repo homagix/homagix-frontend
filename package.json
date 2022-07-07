@@ -36,7 +36,7 @@
     "eslint-plugin-vue": "9.2.0",
     "jsdom": "^19.0.0",
     "jwt-decode": "^3.1.2",
-    "msw": "0.43.0",
+    "msw": "0.43.1",
     "prettier": "2.7.1",
     "prettier-eslint": "15.0.1",
     "sass": "1.53.0",
