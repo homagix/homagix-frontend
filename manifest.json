@@ -7,13 +7,13 @@
       "src/mocks/browser.ts"
     ],
     "css": [
-      "assets/index.6f86016d.css"
+      "assets/index.dc1b0434.css"
     ],
     "assets": [
-      "assets/fa-regular-400.6a274e76.woff2",
-      "assets/fa-regular-400.4e96a7e0.ttf",
-      "assets/fa-solid-900.d76fb4e8.woff2",
-      "assets/fa-solid-900.03f2986c.ttf"
+      "assets/fa-regular-400.52ec4d83.woff2",
+      "assets/fa-regular-400.e2d44fc8.ttf",
+      "assets/fa-solid-900.52bbd916.woff2",
+      "assets/fa-solid-900.5808ca8f.ttf"
     ]
   },
   "src/mocks/browser.ts": {
