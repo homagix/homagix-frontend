@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.5eca7ea1.js",
+    "file": "assets/index.3a07e48b.js",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
@@ -17,7 +17,7 @@
     ]
   },
   "src/mocks/browser.ts": {
-    "file": "assets/browser.ad46fb10.js",
+    "file": "assets/browser.5926e763.js",
     "src": "src/mocks/browser.ts",
     "isDynamicEntry": true,
     "imports": [
