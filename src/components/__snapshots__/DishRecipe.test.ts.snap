@@ -11,7 +11,7 @@ exports[`DishRecipe > should render as expected 1`] = `
     </div>
     <div data-v-172029f8=\\"\\">
       <p class=\\"title is-6\\" data-v-172029f8=\\"\\">Zutaten:</p>
-      <ingredients-list-stub ingredients=\\"[object Object],[object Object]\\" data-v-172029f8=\\"\\"></ingredients-list-stub>
+      <ingredients-list-stub ingredients=\\"[object Object],[object Object]\\" editable=\\"false\\" data-v-172029f8=\\"\\"></ingredients-list-stub>
     </div>
   </div>
   <vue-showdown-stub markdown=\\"Noch gibt es keine Beschreibung zu diesem Gericht\\" tag=\\"div\\" flavor=\\"github\\" options=\\"[object Object]\\" vuetemplate=\\"false\\" vuetemplatedata=\\"[object Object]\\" class=\\"description\\" data-v-172029f8=\\"\\"></vue-showdown-stub>

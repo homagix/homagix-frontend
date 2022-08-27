@@ -26,7 +26,7 @@ const description = computed(() => dish.value.recipe || "Noch gibt es keine Besc
 
 const editMode = ref(false)
 const editedDish = ref({ ...dish.value })
-const ingredients = ref(dish.value.items?.map(getIngredient))
+const ingredients = ref((dish.value.items || []).map(getIngredient))
 
 function getIngredient(item: Item): Ingredient {
   const ingredient = store.state.ingredients?.find(ingredient => ingredient.id === item.id) as Ingredient
@@ -76,7 +76,7 @@ async function save() {
 
       <div>
         <p class="title is-6">Zutaten:</p>
-        <IngredientsList :ingredients="ingredients" />
+        <IngredientsList :ingredients="ingredients" :editable="editMode" @input="listChange" />
       </div>
     </div>
 
