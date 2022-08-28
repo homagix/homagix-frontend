@@ -23,6 +23,12 @@
       "datasources": ["docker"],
       "packageNames": ["node"],
       "allowedVersions": "!/^17\\./"
+    },
+    {
+      "groupName": "vite",
+      "matchPackagePrefixes": [
+        "^@vitejs/"
+      ]
     }
   ]
 }
