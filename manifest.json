@@ -1,18 +1,18 @@
 {
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
-    "file": "assets/fa-regular-400.52ec4d83.woff2",
+    "file": "assets/fa-regular-400.fe69d948.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
-    "file": "assets/fa-solid-900.52bbd916.woff2",
+    "file": "assets/fa-solid-900.d27bc752.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
-    "file": "assets/fa-regular-400.e2d44fc8.ttf",
+    "file": "assets/fa-regular-400.fdc1f753.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
-    "file": "assets/fa-solid-900.5808ca8f.ttf",
+    "file": "assets/fa-solid-900.6d53c706.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
   },
   "index.html": {
@@ -23,13 +23,13 @@
       "src/mocks/browser.ts"
     ],
     "css": [
-      "assets/index.fb0c90ff.css"
+      "assets/index.7930611f.css"
     ],
     "assets": [
-      "assets/fa-regular-400.52ec4d83.woff2",
-      "assets/fa-regular-400.e2d44fc8.ttf",
-      "assets/fa-solid-900.52bbd916.woff2",
-      "assets/fa-solid-900.5808ca8f.ttf"
+      "assets/fa-regular-400.fe69d948.woff2",
+      "assets/fa-regular-400.fdc1f753.ttf",
+      "assets/fa-solid-900.d27bc752.woff2",
+      "assets/fa-solid-900.6d53c706.ttf"
     ]
   },
   "src/mocks/browser.ts": {
@@ -41,7 +41,7 @@
     ]
   },
   "index.css": {
-    "file": "assets/index.fb0c90ff.css",
+    "file": "assets/index.7930611f.css",
     "src": "index.css"
   }
 }
