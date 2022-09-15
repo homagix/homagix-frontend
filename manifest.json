@@ -16,7 +16,7 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
   },
   "index.html": {
-    "file": "assets/index.4f21e49f.js",
+    "file": "assets/index.132b54bf.js",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
@@ -33,7 +33,7 @@
     ]
   },
   "src/mocks/browser.ts": {
-    "file": "assets/browser.69cdcae6.js",
+    "file": "assets/browser.6aa1c1b5.js",
     "src": "src/mocks/browser.ts",
     "isDynamicEntry": true,
     "imports": [
