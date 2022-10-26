@@ -22,7 +22,7 @@
     "vue": "3.2.41"
   },
   "devDependencies": {
-    "@types/node": "18.11.6",
+    "@types/node": "18.11.7",
     "@types/showdown": "2.0.0",
     "@typescript-eslint/eslint-plugin": "5.41.0",
     "@vitejs/plugin-vue": "3.2.0",
