@@ -1,19 +1,19 @@
 {
-  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
-    "file": "assets/fa-solid-900.d27bc752.woff2",
-    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
-  },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
-    "file": "assets/fa-regular-400.fe69d948.woff2",
+    "file": "assets/fa-regular-400.5da313b0.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
   },
-  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
-    "file": "assets/fa-solid-900.6d53c706.ttf",
-    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
+    "file": "assets/fa-solid-900.8f06540f.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
-    "file": "assets/fa-regular-400.fdc1f753.ttf",
+    "file": "assets/fa-regular-400.d7b19fe2.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
+    "file": "assets/fa-solid-900.e4f6a7e9.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
   },
   "index.html": {
     "file": "assets/index.1704ff8b.js",
@@ -23,13 +23,13 @@
       "src/mocks/browser.ts"
     ],
     "css": [
-      "assets/index.7930611f.css"
+      "assets/index.4e4efc03.css"
     ],
     "assets": [
-      "assets/fa-regular-400.fe69d948.woff2",
-      "assets/fa-regular-400.fdc1f753.ttf",
-      "assets/fa-solid-900.d27bc752.woff2",
-      "assets/fa-solid-900.6d53c706.ttf"
+      "assets/fa-regular-400.5da313b0.woff2",
+      "assets/fa-regular-400.d7b19fe2.ttf",
+      "assets/fa-solid-900.8f06540f.woff2",
+      "assets/fa-solid-900.e4f6a7e9.ttf"
     ]
   },
   "src/mocks/browser.ts": {
@@ -41,7 +41,7 @@
     ]
   },
   "index.css": {
-    "file": "assets/index.7930611f.css",
+    "file": "assets/index.4e4efc03.css",
     "src": "index.css"
   }
 }
