@@ -23,7 +23,7 @@
       "src/mocks/browser.ts"
     ],
     "css": [
-      "assets/index.4e4efc03.css"
+      "assets/index.c6a3c49b.css"
     ],
     "assets": [
       "assets/fa-regular-400.5da313b0.woff2",
@@ -41,7 +41,7 @@
     ]
   },
   "index.css": {
-    "file": "assets/index.4e4efc03.css",
+    "file": "assets/index.c6a3c49b.css",
     "src": "index.css"
   }
 }
