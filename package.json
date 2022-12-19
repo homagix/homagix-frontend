@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/node": "18.11.17",
     "@types/showdown": "2.0.0",
-    "@typescript-eslint/eslint-plugin": "5.46.1",
+    "@typescript-eslint/eslint-plugin": "5.47.0",
     "@vitejs/plugin-vue": "3.2.0",
     "@vitest/coverage-c8": "0.26.0",
     "@vue/test-utils": "2.2.6",
