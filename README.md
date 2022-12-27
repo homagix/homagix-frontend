@@ -12,7 +12,7 @@ This is the frontend part of Homagix. It is most likely that you want to clone [
 
 ## Adding recipes
 
-Dishes are stored in [the server](https://github.com/jschirrmacher/homagix-server). Either you use the one we run on <https://homagix-server.dilab.co> and get the dishes we like, or you run your own server and can store your own. Have a look at the repo, to learn how.
+Dishes are stored in [the server](https://github.com/jschirrmacher/homagix-server). Either you use the one we run on <https://homagix-server.justso.de and get the dishes we like, or you run your own server and can store your own. Have a look at the repo, to learn how.
 
 ## Install and run
 
