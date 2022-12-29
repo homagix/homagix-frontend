@@ -17,7 +17,7 @@ export type Item = {
 export type Dish = {
   id: string
   name: string
-  image: string
+  images: string[]
   recipe?: string
   source?: string
   last?: string

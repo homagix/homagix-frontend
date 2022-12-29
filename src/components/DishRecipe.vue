@@ -21,8 +21,15 @@ const showdownOptions = {
 }
 
 const dish = computed(() => ({ ...store.state.dishes.find(dish => dish.id === props.id) } as Dish))
-const image = getImageUrl(dish.value.image as string)
+const image = computed(() => dish.value.images && dish.value.images.length > 0 && getImageUrl(dish.value.images[0]))
 const description = computed(() => dish.value.recipe || "Noch gibt es keine Beschreibung zu diesem Gericht")
+const additionalImages = computed(() => {
+  const images = dish.value.images
+  if (images && images.length > 1) {
+    return dish.value.images.slice(1).map(i => getImageUrl(i))
+  }
+  return []
+})
 
 const editMode = ref(false)
 const editedDish = ref({ ...dish.value })
@@ -71,10 +78,10 @@ async function save() {
     <div class="image-ingredients">
       <div class="image-wrapper">
         <o-icon icon="image"></o-icon>
-        <img v-if="dish.image" :src="image" />
+        <img v-if="image" :src="image" />
       </div>
 
-      <div>
+      <div class="ingredients-list-container">
         <p class="title is-6">Zutaten:</p>
         <IngredientsList :ingredients="ingredients" />
       </div>
@@ -88,6 +95,8 @@ async function save() {
       :options="showdownOptions"
     />
     <textarea v-else v-model="editedDish.recipe" />
+
+    <img v-for="(img, index) in additionalImages" :key="index" :src="img" />
 
     <div class="buttons">
       <AppButton icon="list" v-if="!editMode" @click="backToList">Zurück</AppButton>
@@ -158,5 +167,11 @@ textarea {
 
 .buttons {
   padding-bottom: 1rem;
+}
+
+@media screen and (min-width: 800px) {
+  .ingredients-list-container {
+    max-width: 33%;
+  }
 }
 </style>
