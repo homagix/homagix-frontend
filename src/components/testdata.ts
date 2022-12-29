@@ -11,7 +11,7 @@ export const guacamole: Dish = {
     { id: tomato.id, amount: 2 },
   ],
   alwaysOnList: false,
-  image: "guacamole.jpg",
+  images: ["guacamole.jpg"],
   isFavorite: false,
   isEditable: true,
 }
@@ -21,7 +21,7 @@ export const tomatoSoup: Dish = {
   name: "Tomatensuppe",
   items: [{ id: tomato.id, amount: 4 }],
   alwaysOnList: false,
-  image: "tomatoSoup.jpg",
+  images: ["tomatoSoup.jpg"],
   isFavorite: false,
   isEditable: false,
 }

@@ -7,8 +7,24 @@ import Oruga from "@oruga-ui/oruga-next"
 import RecipesList from "@/components/RecipesList.vue"
 
 const dishes = [
-  { id: "1", name: "dish 1", items: [], alwaysOnList: false, image: "dish1.jpg", isFavorite: false, isEditable: true },
-  { id: "2", name: "dish 2", items: [], alwaysOnList: false, image: "dish2.jpg", isFavorite: true, isEditable: true },
+  {
+    id: "1",
+    name: "dish 1",
+    items: [],
+    alwaysOnList: false,
+    images: ["dish1.jpg"],
+    isFavorite: false,
+    isEditable: true,
+  },
+  {
+    id: "2",
+    name: "dish 2",
+    items: [],
+    alwaysOnList: false,
+    images: ["dish2.jpg"],
+    isFavorite: true,
+    isEditable: true,
+  },
 ] as Dish[]
 
 const ingredients = [] as Ingredient[]
