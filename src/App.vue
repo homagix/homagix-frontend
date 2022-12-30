@@ -101,6 +101,10 @@ h1.title {
   }
 }
 
+section.section {
+  padding: 1rem 0.7rem;
+}
+
 #app {
   .navbar {
     display: flex;

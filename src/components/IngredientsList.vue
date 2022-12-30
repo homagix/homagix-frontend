@@ -25,6 +25,10 @@ defineProps<{ ingredients: Ingredient[] }>()
   min-height: 300px;
   min-width: 200px;
 
+  @media (max-width: 599px) {
+    width: 100%;
+  }
+
   > * {
     padding: 3px;
   }

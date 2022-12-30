@@ -123,7 +123,7 @@ async function save() {
   margin-bottom: 0.5rem;
   column-gap: 5px;
 
-  @media (min-width: 800px) {
+  @media (min-width: 600px) {
     display: flex;
     justify-content: space-between;
   }
@@ -151,8 +151,10 @@ async function save() {
 
   #main-image {
     background-size: cover;
+    background-position: center;
     width: 100%;
     height: 100%;
+    min-height: 300px;
   }
 }
 
@@ -184,7 +186,7 @@ textarea {
   padding-bottom: 1rem;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
   .ingredients-list-container {
     max-width: 33%;
   }
