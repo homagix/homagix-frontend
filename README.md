@@ -31,7 +31,7 @@ If you want to install a development version, use the following npm commands aft
 
 ## Use pre-installed version on GitHub Pages
 
-You can also use the [frontend in Github Pages](https://jschirrmacher.github.io/homagix-frontend/). However, you will still need a server backend where dishes are stored. By default, a sample server <https://homagix-server.dilab.co> is used. To configure an own server, open the dev console in your browser and enter
+You can also use the [frontend in Github Pages](https://jschirrmacher.github.io/homagix-frontend/). However, you will still need a server backend where dishes are stored. By default, a sample server <https://homagix-server.justso.de> is used. To configure an own server, open the dev console in your browser and enter
 
     localStorage.setItem("basePath", "https://my-homagix-server.com:8200")
 
