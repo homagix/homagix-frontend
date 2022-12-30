@@ -21,22 +21,22 @@ const showdownOptions = {
 }
 
 const dish = computed(() => ({ ...store.state.dishes.find(dish => dish.id === props.id) } as Dish))
-const mainImage = computed(() => dish.value.images && dish.value.images.length > 0 && getImageUrl(dish.value.images[0]))
 const description = computed(() => dish.value.recipe || "Noch gibt es keine Beschreibung zu diesem Gericht")
+
+const mainImage = computed(() => {
+  const images = dish.value.images
+  if (images && images.length > 0) {
+    return { "background-image": "url(" + getImageUrl(images[0]) + ")" }
+  }
+  return undefined
+})
+
 const additionalImages = computed(() => {
   const images = dish.value.images
   if (images && images.length > 1) {
     return dish.value.images.slice(1).map(i => getImageUrl(i))
   }
   return []
-})
-
-const imageStyle = computed(() => {
-  const images = dish.value.images
-  if (images && images.length > 0) {
-    return { "background-image": "url(" + getImageUrl(images[0]) + ")" }
-  }
-  return {}
 })
 
 const editMode = ref(false)
@@ -86,7 +86,7 @@ async function save() {
     <div class="image-ingredients">
       <div class="image-wrapper">
         <o-icon v-if="!mainImage" icon="image"></o-icon>
-        <div v-if="mainImage" id="main-image" :style="imageStyle" />
+        <div v-if="mainImage" id="main-image" :style="mainImage" />
       </div>
 
       <div class="ingredients-list-container">
