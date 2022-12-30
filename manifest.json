@@ -16,14 +16,14 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
   },
   "index.html": {
-    "file": "assets/index.5fcbc0d4.js",
+    "file": "assets/index.4a16e34d.js",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
       "src/mocks/browser.ts"
     ],
     "css": [
-      "assets/index.39e53a26.css"
+      "assets/index.48e40d49.css"
     ],
     "assets": [
       "assets/fa-regular-400.5da313b0.woff2",
@@ -33,7 +33,7 @@
     ]
   },
   "src/mocks/browser.ts": {
-    "file": "assets/browser.5f50ecdc.js",
+    "file": "assets/browser.db6ae5d5.js",
     "src": "src/mocks/browser.ts",
     "isDynamicEntry": true,
     "imports": [
@@ -41,7 +41,7 @@
     ]
   },
   "index.css": {
-    "file": "assets/index.39e53a26.css",
+    "file": "assets/index.48e40d49.css",
     "src": "index.css"
   }
 }
