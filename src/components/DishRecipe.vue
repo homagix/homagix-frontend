@@ -21,7 +21,7 @@ const showdownOptions = {
 }
 
 const dish = computed(() => ({ ...store.state.dishes.find(dish => dish.id === props.id) } as Dish))
-const image = computed(() => dish.value.images && dish.value.images.length > 0 && getImageUrl(dish.value.images[0]))
+const mainImage = computed(() => dish.value.images && dish.value.images.length > 0 && getImageUrl(dish.value.images[0]))
 const description = computed(() => dish.value.recipe || "Noch gibt es keine Beschreibung zu diesem Gericht")
 const additionalImages = computed(() => {
   const images = dish.value.images
@@ -29,6 +29,14 @@ const additionalImages = computed(() => {
     return dish.value.images.slice(1).map(i => getImageUrl(i))
   }
   return []
+})
+
+const imageStyle = computed(() => {
+  const images = dish.value.images
+  if (images && images.length > 0) {
+    return { "background-image": "url(" + getImageUrl(images[0]) + ")" }
+  }
+  return {}
 })
 
 const editMode = ref(false)
@@ -77,8 +85,8 @@ async function save() {
 
     <div class="image-ingredients">
       <div class="image-wrapper">
-        <o-icon icon="image"></o-icon>
-        <img v-if="image" :src="image" />
+        <o-icon v-if="!mainImage" icon="image"></o-icon>
+        <div v-if="mainImage" id="main-image" :style="imageStyle" />
       </div>
 
       <div class="ingredients-list-container">
@@ -139,6 +147,12 @@ async function save() {
     img {
       position: relative;
     }
+  }
+
+  #main-image {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
   }
 }
 
