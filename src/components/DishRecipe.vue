@@ -159,7 +159,8 @@ async function save() {
 .description {
   margin-bottom: 1rem;
 
-  &:deep(ol) {
+  &:deep(ol), &:deep(ul) {
+    list-style: initial;
     padding-left: 30px;
   }
 }
