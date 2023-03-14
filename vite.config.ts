@@ -1,5 +1,5 @@
 import path from "path"
-import { defineConfig, UserConfigExport } from "vite"
+import { defineConfig } from "vitest/config"
 import vue from "@vitejs/plugin-vue"
 import { server } from "./src/mocks/server"
 
@@ -33,10 +33,11 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: ["./vitest.setup.js"],
     coverage: {
+      provider: "c8",
       all: true,
       include: ["src/**/*.{ts,vue}"],
       exclude: ["src/mocks/**/*"],
-      reporters: ["text", "html"],
+      reporter: ["lcov", "text"],
     },
   },
-} as UserConfigExport)
+})
