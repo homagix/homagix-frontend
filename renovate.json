@@ -27,6 +27,7 @@
     {
       "groupName": "vite",
       "matchPackagePrefixes": [
+        "vite",
         "^@vitejs/"
       ]
     }
