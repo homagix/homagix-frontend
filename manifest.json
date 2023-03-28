@@ -1,43 +1,43 @@
 {
   "index.css": {
-    "file": "assets/index-f582ec0c.css",
+    "file": "assets/index-d98a197c.css",
     "src": "index.css"
   },
   "index.html": {
     "assets": [
-      "assets/fa-regular-400-7ba24c41.woff2",
-      "assets/fa-regular-400-12dea17b.ttf",
-      "assets/fa-solid-900-e2c5cf54.woff2",
-      "assets/fa-solid-900-67a880b4.ttf"
+      "assets/fa-regular-400-8e7e5ea1.woff2",
+      "assets/fa-regular-400-528d022d.ttf",
+      "assets/fa-solid-900-7152a693.woff2",
+      "assets/fa-solid-900-67a65763.ttf"
     ],
     "css": [
-      "assets/index-f582ec0c.css"
+      "assets/index-d98a197c.css"
     ],
     "dynamicImports": [
       "src/mocks/browser.ts"
     ],
-    "file": "assets/index-04b49c38.js",
+    "file": "assets/index-0fbc6b0b.js",
     "isEntry": true,
     "src": "index.html"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
-    "file": "assets/fa-regular-400-12dea17b.ttf",
+    "file": "assets/fa-regular-400-528d022d.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
-    "file": "assets/fa-regular-400-7ba24c41.woff2",
+    "file": "assets/fa-regular-400-8e7e5ea1.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
-    "file": "assets/fa-solid-900-67a880b4.ttf",
+    "file": "assets/fa-solid-900-67a65763.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
-    "file": "assets/fa-solid-900-e2c5cf54.woff2",
+    "file": "assets/fa-solid-900-7152a693.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
   "src/mocks/browser.ts": {
-    "file": "assets/browser-7df7ee57.js",
+    "file": "assets/browser-67abb44c.js",
     "imports": [
       "index.html"
     ],
