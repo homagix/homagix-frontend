@@ -1,30 +1,30 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`RecipesList > should render 1`] = `
-"<div class=\\"title is-4\\" data-v-3c941545=\\"\\"> Rezepte
-  <!--v-if--><a href=\\"/wordcloud\\" class=\\"wordcloud-toggle\\" data-v-3c941545=\\"\\"><span class=\\"o-icon\\" data-v-3c941545=\\"\\"><i class=\\"mdi mdi-magnifying-glass mdi-24px\\"></i></span></a>
+"<div data-v-3c941545=\\"\\" class=\\"title is-4\\"> Rezepte
+  <!--v-if--><a data-v-3c941545=\\"\\" href=\\"/wordcloud\\" class=\\"wordcloud-toggle\\"><span data-v-3c941545=\\"\\" class=\\"o-icon\\"><i class=\\"mdi mdi-magnifying-glass mdi-24px\\"></i></span></a>
 </div>
 <!--v-if-->
-<ul class=\\"recipes-list\\" data-v-3c941545=\\"\\">
-  <li data-v-3c941545=\\"\\"><span class=\\"o-icon\\" data-v-3c941545=\\"\\"><i class=\\"mdi mdi-utensils mdi-24px\\"></i></span> dish 1 <a href=\\"#\\" class=\\"favorite\\" title=\\"Zur Favoritenliste hinzufügen\\" data-v-a7877447=\\"\\" data-v-3c941545=\\"\\">☆</a></li>
-  <li data-v-3c941545=\\"\\"><span class=\\"o-icon\\" data-v-3c941545=\\"\\"><i class=\\"mdi mdi-utensils mdi-24px\\"></i></span> dish 2 <a href=\\"#\\" class=\\"favorite\\" title=\\"Von der Favoritenliste entfernen\\" data-v-a7877447=\\"\\" data-v-3c941545=\\"\\">★</a></li>
+<ul data-v-3c941545=\\"\\" class=\\"recipes-list\\">
+  <li data-v-3c941545=\\"\\"><span data-v-3c941545=\\"\\" class=\\"o-icon\\"><i class=\\"mdi mdi-utensils mdi-24px\\"></i></span> dish 1 <a data-v-a7877447=\\"\\" data-v-3c941545=\\"\\" href=\\"#\\" class=\\"favorite\\" title=\\"Zur Favoritenliste hinzufügen\\">☆</a></li>
+  <li data-v-3c941545=\\"\\"><span data-v-3c941545=\\"\\" class=\\"o-icon\\"><i class=\\"mdi mdi-utensils mdi-24px\\"></i></span> dish 2 <a data-v-a7877447=\\"\\" data-v-3c941545=\\"\\" href=\\"#\\" class=\\"favorite\\" title=\\"Von der Favoritenliste entfernen\\">★</a></li>
 </ul>"
 `;
 
 exports[`RecipesList > should render a message when there are no items in list 1`] = `
-"<div class=\\"title is-4\\" data-v-3c941545=\\"\\"> Rezepte
-  <!--v-if--><a href=\\"/wordcloud\\" class=\\"wordcloud-toggle\\" data-v-3c941545=\\"\\"><span class=\\"o-icon\\" data-v-3c941545=\\"\\"><i class=\\"mdi mdi-magnifying-glass mdi-24px\\"></i></span></a>
+"<div data-v-3c941545=\\"\\" class=\\"title is-4\\"> Rezepte
+  <!--v-if--><a data-v-3c941545=\\"\\" href=\\"/wordcloud\\" class=\\"wordcloud-toggle\\"><span data-v-3c941545=\\"\\" class=\\"o-icon\\"><i class=\\"mdi mdi-magnifying-glass mdi-24px\\"></i></span></a>
 </div>
 <!--v-if-->
 <div data-v-3c941545=\\"\\">Keine Rezepte gefunden</div>"
 `;
 
 exports[`RecipesList > should render favorites 1`] = `
-"<div class=\\"title is-4\\" data-v-3c941545=\\"\\"> Rezepte
-  <!--v-if--><a href=\\"/wordcloud\\" class=\\"wordcloud-toggle\\" data-v-3c941545=\\"\\"><span class=\\"o-icon\\" data-v-3c941545=\\"\\"><i class=\\"mdi mdi-magnifying-glass mdi-24px\\"></i></span></a>
+"<div data-v-3c941545=\\"\\" class=\\"title is-4\\"> Rezepte
+  <!--v-if--><a data-v-3c941545=\\"\\" href=\\"/wordcloud\\" class=\\"wordcloud-toggle\\"><span data-v-3c941545=\\"\\" class=\\"o-icon\\"><i class=\\"mdi mdi-magnifying-glass mdi-24px\\"></i></span></a>
 </div>
 <!--v-if-->
-<ul class=\\"recipes-list\\" data-v-3c941545=\\"\\">
-  <li data-v-3c941545=\\"\\"><span class=\\"o-icon\\" data-v-3c941545=\\"\\"><i class=\\"mdi mdi-utensils mdi-24px\\"></i></span> dish 2 <a href=\\"#\\" class=\\"favorite\\" title=\\"Von der Favoritenliste entfernen\\" data-v-a7877447=\\"\\" data-v-3c941545=\\"\\">★</a></li>
+<ul data-v-3c941545=\\"\\" class=\\"recipes-list\\">
+  <li data-v-3c941545=\\"\\"><span data-v-3c941545=\\"\\" class=\\"o-icon\\"><i class=\\"mdi mdi-utensils mdi-24px\\"></i></span> dish 2 <a data-v-a7877447=\\"\\" data-v-3c941545=\\"\\" href=\\"#\\" class=\\"favorite\\" title=\\"Von der Favoritenliste entfernen\\">★</a></li>
 </ul>"
 `;
