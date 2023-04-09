@@ -2,24 +2,24 @@
 
 exports[`DishRecipe > should render as expected 1`] = `
 "<section data-v-6da79d3c=\\"\\">
-  <div class=\\"title is-4\\" data-v-6da79d3c=\\"\\"><span data-v-6da79d3c=\\"\\">Guacamole</span>
-    <favorite-button-stub dish=\\"[object Object]\\" data-v-6da79d3c=\\"\\"></favorite-button-stub>
+  <div data-v-6da79d3c=\\"\\" class=\\"title is-4\\"><span data-v-6da79d3c=\\"\\">Guacamole</span>
+    <favorite-button-stub data-v-6da79d3c=\\"\\" dish=\\"[object Object]\\"></favorite-button-stub>
   </div>
-  <div class=\\"image-ingredients\\" data-v-6da79d3c=\\"\\">
-    <div class=\\"image-wrapper\\" data-v-6da79d3c=\\"\\">
+  <div data-v-6da79d3c=\\"\\" class=\\"image-ingredients\\">
+    <div data-v-6da79d3c=\\"\\" class=\\"image-wrapper\\">
       <!--v-if-->
-      <div id=\\"main-image\\" style=\\"background-image: url(https://homagix-server.justso.de/images/guacamole.jpg);\\" data-v-6da79d3c=\\"\\"></div>
+      <div data-v-6da79d3c=\\"\\" id=\\"main-image\\" style=\\"background-image: url(https://homagix-server.justso.de/images/guacamole.jpg);\\"></div>
     </div>
-    <div class=\\"ingredients-list-container\\" data-v-6da79d3c=\\"\\">
-      <p class=\\"title is-6\\" data-v-6da79d3c=\\"\\">Zutaten:</p>
-      <ingredients-list-stub ingredients=\\"[object Object],[object Object]\\" data-v-6da79d3c=\\"\\"></ingredients-list-stub>
+    <div data-v-6da79d3c=\\"\\" class=\\"ingredients-list-container\\">
+      <p data-v-6da79d3c=\\"\\" class=\\"title is-6\\">Zutaten:</p>
+      <ingredients-list-stub data-v-6da79d3c=\\"\\" ingredients=\\"[object Object],[object Object]\\"></ingredients-list-stub>
     </div>
   </div>
-  <vue-showdown-stub markdown=\\"Noch gibt es keine Beschreibung zu diesem Gericht\\" tag=\\"div\\" flavor=\\"github\\" options=\\"[object Object]\\" vuetemplate=\\"false\\" vuetemplatedata=\\"[object Object]\\" class=\\"description\\" data-v-6da79d3c=\\"\\"></vue-showdown-stub>
-  <div class=\\"buttons\\" data-v-6da79d3c=\\"\\">
-    <app-button-stub icon=\\"list\\" data-v-6da79d3c=\\"\\"></app-button-stub>
+  <vue-showdown-stub data-v-6da79d3c=\\"\\" markdown=\\"Noch gibt es keine Beschreibung zu diesem Gericht\\" tag=\\"div\\" flavor=\\"github\\" options=\\"[object Object]\\" vuetemplate=\\"false\\" vuetemplatedata=\\"[object Object]\\" class=\\"description\\"></vue-showdown-stub>
+  <div data-v-6da79d3c=\\"\\" class=\\"buttons\\">
+    <app-button-stub data-v-6da79d3c=\\"\\" icon=\\"list\\"></app-button-stub>
     <!--v-if-->
-    <app-button-stub icon=\\"edit\\" data-v-6da79d3c=\\"\\"></app-button-stub>
+    <app-button-stub data-v-6da79d3c=\\"\\" icon=\\"edit\\"></app-button-stub>
     <!--v-if-->
   </div>
 </section>"
