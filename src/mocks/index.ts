@@ -1,3 +1,4 @@
+import { defineComponent } from "vue"
 import { mount, shallowMount } from "@vue/test-utils"
 import { createRouterMock } from "./router"
 import { createStoreMock, StoreMockOptions } from "./store"
@@ -11,7 +12,7 @@ type MountOptions = {
   extraPaths?: string[]
 }
 
-export function mountComponent<C>(component: C, options: MountOptions) {
+export function mountComponent(component: ReturnType<typeof defineComponent>, options: MountOptions) {
   const { store, actionMocks, mutationMocks } = createStoreMock(options.state || {}, options.storeOptions || {})
   const router = createRouterMock(component, options.extraPaths || [])
   const m = options.shallow === undefined || options.shallow ? shallowMount : mount
