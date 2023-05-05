@@ -1,6 +1,6 @@
 {
   "index.css": {
-    "file": "assets/index-d98a197c.css",
+    "file": "assets/index-1229222a.css",
     "src": "index.css"
   },
   "index.html": {
@@ -11,12 +11,12 @@
       "assets/fa-solid-900-67a65763.ttf"
     ],
     "css": [
-      "assets/index-d98a197c.css"
+      "assets/index-1229222a.css"
     ],
     "dynamicImports": [
       "src/mocks/browser.ts"
     ],
-    "file": "assets/index-52e213ff.js",
+    "file": "assets/index-866eb485.js",
     "isEntry": true,
     "src": "index.html"
   },
@@ -37,7 +37,7 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
   "src/mocks/browser.ts": {
-    "file": "assets/browser-cb34f8a0.js",
+    "file": "assets/browser-908c9d1a.js",
     "imports": [
       "index.html"
     ],
