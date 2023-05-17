@@ -25,7 +25,7 @@
     "vue": "3.3.2"
   },
   "devDependencies": {
-    "@types/node": "20.1.5",
+    "@types/node": "20.1.7",
     "@types/showdown": "2.0.1",
     "@typescript-eslint/eslint-plugin": "5.59.6",
     "@vitejs/plugin-vue": "4.2.3",
@@ -45,7 +45,7 @@
     "prettier-eslint": "15.0.1",
     "sass": "1.62.1",
     "typescript": "5.0.4",
-    "vite": "4.3.6",
+    "vite": "4.3.7",
     "vitest": "0.31.0",
     "vue-router": "4.2.0",
     "vue-showdown": "4.1.0",
