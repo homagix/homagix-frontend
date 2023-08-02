@@ -45,7 +45,7 @@
     "prettier-eslint": "15.0.1",
     "sass": "1.64.2",
     "typescript": "5.1.6",
-    "vite": "4.4.7",
+    "vite": "4.4.8",
     "vitest": "0.33.0",
     "vue-router": "4.2.4",
     "vue-showdown": "4.1.1",
