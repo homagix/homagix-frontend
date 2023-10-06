@@ -33,7 +33,7 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: ["./vitest.setup.js"],
     coverage: {
-      provider: "c8",
+      provider: "v8",
       all: true,
       include: ["src/**/*.{ts,vue}"],
       exclude: ["src/mocks/**/*"],
