@@ -11,8 +11,6 @@ function getRoute(path: string, user: User | null = null, receivers: TokenReceiv
   return { route, authRouter }
 }
 
-type FetchFunction = (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>
-
 function mockFetch(status: number, result: object) {
   const fetch = () =>
     Promise.resolve({
@@ -20,7 +18,7 @@ function mockFetch(status: number, result: object) {
       headers: { get: () => "application/json" },
       json: () => Promise.resolve(result),
     })
-  global.fetch = vi.fn(fetch) as unknown as FetchFunction
+  global.fetch = vi.fn(fetch) as unknown as typeof global.fetch
 }
 
 describe("AuthRouter", () => {
