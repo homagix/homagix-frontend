@@ -1,4 +1,4 @@
 import { vi } from "vitest"
-import "jsdom"
+import "happy-dom"
 
 HTMLCanvasElement.prototype.getContext = vi.fn()
