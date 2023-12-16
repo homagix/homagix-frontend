@@ -14,9 +14,9 @@ import { bulmaConfig } from "@oruga-ui/theme-bulma"
 async function startMockServer() {
   console.log("Mocking server")
   const { worker } = await import("./mocks/browser")
-  worker.start({
+  await worker.start({
     onUnhandledRequest(req) {
-      console.error("Found an unhandled %s request to %s", req.method, req.url.href)
+      console.error("Found an unhandled %s request to %s", req.method, req.url)
     },
   })
 }
