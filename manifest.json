@@ -16,7 +16,7 @@
     "dynamicImports": [
       "src/mocks/browser.ts"
     ],
-    "file": "assets/index-e806d230.js",
+    "file": "assets/index-2e816c38.js",
     "isEntry": true,
     "src": "index.html"
   },
@@ -37,10 +37,7 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
   "src/mocks/browser.ts": {
-    "file": "assets/browser-877bcea2.js",
-    "imports": [
-      "index.html"
-    ],
+    "file": "assets/browser-191b078d.js",
     "isDynamicEntry": true,
     "src": "src/mocks/browser.ts"
   }
