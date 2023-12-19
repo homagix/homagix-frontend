@@ -1,43 +1,39 @@
 {
-  "index.css": {
-    "file": "assets/index-a5adf29a.css",
-    "src": "index.css"
-  },
   "index.html": {
     "assets": [
-      "assets/fa-regular-400-9169d8be.woff2",
-      "assets/fa-regular-400-7d81a1a7.ttf",
-      "assets/fa-solid-900-886c8611.woff2",
-      "assets/fa-solid-900-cea79b34.ttf"
+      "assets/fa-regular-400-DjrD39cY.woff2",
+      "assets/fa-regular-400-TBaJECdl.ttf",
+      "assets/fa-solid-900-wCNuHzbQ.woff2",
+      "assets/fa-solid-900-zNLXiXYJ.ttf"
     ],
     "css": [
-      "assets/index-a5adf29a.css"
+      "assets/index-zN37pJTe.css"
     ],
     "dynamicImports": [
       "src/mocks/browser.ts"
     ],
-    "file": "assets/index-2e816c38.js",
+    "file": "assets/index-NETFbSB8.js",
     "isEntry": true,
     "src": "index.html"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
-    "file": "assets/fa-regular-400-7d81a1a7.ttf",
+    "file": "assets/fa-regular-400-TBaJECdl.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
-    "file": "assets/fa-regular-400-9169d8be.woff2",
+    "file": "assets/fa-regular-400-DjrD39cY.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
-    "file": "assets/fa-solid-900-cea79b34.ttf",
+    "file": "assets/fa-solid-900-zNLXiXYJ.ttf",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
-    "file": "assets/fa-solid-900-886c8611.woff2",
+    "file": "assets/fa-solid-900-wCNuHzbQ.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
   "src/mocks/browser.ts": {
-    "file": "assets/browser-191b078d.js",
+    "file": "assets/browser-qmBFv39i.js",
     "isDynamicEntry": true,
     "src": "src/mocks/browser.ts"
   }
