@@ -1,11 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`LoginPage > should render 1`] = `
-"<h2 class=\\"title is-4\\">Willkommen!</h2>
+"<h2 class="title is-4">Willkommen!</h2>
 <p> Du bist bereits registriert? Um deine Daten zu schützen, musst du den Bookmark verwenden, den du nach der Registrierung erhalten hast. </p>
-<p>Du willst dich neu registrieren? Dann geht's <router-link-stub to=\\"/register\\" replace=\\"false\\" custom=\\"false\\" ariacurrentvalue=\\"page\\"></router-link-stub>
+<p>Du willst dich neu registrieren? Dann geht's <router-link-stub to="/register" replace="false" custom="false" ariacurrentvalue="page"></router-link-stub>
 </p>
-<div class=\\"button-list\\">
+<div class="button-list">
   <app-button-stub></app-button-stub>
 </div>"
 `;

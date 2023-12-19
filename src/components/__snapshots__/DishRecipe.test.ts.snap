@@ -1,25 +1,25 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`DishRecipe > should render as expected 1`] = `
-"<section data-v-6da79d3c=\\"\\">
-  <div data-v-6da79d3c=\\"\\" class=\\"title is-4\\"><span data-v-6da79d3c=\\"\\">Guacamole</span>
-    <favorite-button-stub data-v-6da79d3c=\\"\\" dish=\\"[object Object]\\"></favorite-button-stub>
+"<section data-v-6da79d3c="">
+  <div data-v-6da79d3c="" class="title is-4"><span data-v-6da79d3c="">Guacamole</span>
+    <favorite-button-stub data-v-6da79d3c="" dish="[object Object]"></favorite-button-stub>
   </div>
-  <div data-v-6da79d3c=\\"\\" class=\\"image-ingredients\\">
-    <div data-v-6da79d3c=\\"\\" class=\\"image-wrapper\\">
+  <div data-v-6da79d3c="" class="image-ingredients">
+    <div data-v-6da79d3c="" class="image-wrapper">
       <!--v-if-->
-      <div data-v-6da79d3c=\\"\\" id=\\"main-image\\" style=\\"background-image: url(\\" https://homagix-server.justso.de/images/guacamole.jpg\\");\\"></div>
+      <div data-v-6da79d3c="" id="main-image" style="background-image: url(" https://homagix-server.justso.de/images/guacamole.jpg");"></div>
     </div>
-    <div data-v-6da79d3c=\\"\\" class=\\"ingredients-list-container\\">
-      <p data-v-6da79d3c=\\"\\" class=\\"title is-6\\">Zutaten:</p>
-      <ingredients-list-stub data-v-6da79d3c=\\"\\" ingredients=\\"[object Object],[object Object]\\"></ingredients-list-stub>
+    <div data-v-6da79d3c="" class="ingredients-list-container">
+      <p data-v-6da79d3c="" class="title is-6">Zutaten:</p>
+      <ingredients-list-stub data-v-6da79d3c="" ingredients="[object Object],[object Object]"></ingredients-list-stub>
     </div>
   </div>
-  <vue-showdown-stub data-v-6da79d3c=\\"\\" markdown=\\"Noch gibt es keine Beschreibung zu diesem Gericht\\" tag=\\"div\\" flavor=\\"github\\" options=\\"[object Object]\\" vuetemplate=\\"false\\" vuetemplatecomponents=\\"[object Object]\\" vuetemplatedata=\\"[object Object]\\" class=\\"description\\"></vue-showdown-stub>
-  <div data-v-6da79d3c=\\"\\" class=\\"buttons\\">
-    <app-button-stub data-v-6da79d3c=\\"\\" icon=\\"list\\"></app-button-stub>
+  <vue-showdown-stub data-v-6da79d3c="" markdown="Noch gibt es keine Beschreibung zu diesem Gericht" tag="div" flavor="github" options="[object Object]" vuetemplate="false" vuetemplatecomponents="[object Object]" vuetemplatedata="[object Object]" class="description"></vue-showdown-stub>
+  <div data-v-6da79d3c="" class="buttons">
+    <app-button-stub data-v-6da79d3c="" icon="list"></app-button-stub>
     <!--v-if-->
-    <app-button-stub data-v-6da79d3c=\\"\\" icon=\\"edit\\"></app-button-stub>
+    <app-button-stub data-v-6da79d3c="" icon="edit"></app-button-stub>
     <!--v-if-->
   </div>
 </section>"

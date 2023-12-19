@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`NotFoundPage > should render 1`] = `
-"<div class=\\"title is-4\\">Hast du dich verirrt?</div>
+"<div class="title is-4">Hast du dich verirrt?</div>
 <p>Die angeforderte Seite existiert leider nicht.</p>
-<a href=\\"/\\" class=\\"\\">Bring mich in Sicherheit!</a>"
+<a href="/" class="">Bring mich in Sicherheit!</a>"
 `;

@@ -1,9 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`LogoutPage > should render 1`] = `
-"<h2 class=\\"title is-4\\">Ciao!</h2>
+"<h2 class="title is-4">Ciao!</h2>
 <p>Wir hoffen, Dich bald wiederzusehen!</p>
-<div class=\\"button-list\\">
-  <app-button-stub id=\\"recipes-button\\"></app-button-stub>
+<div class="button-list">
+  <app-button-stub id="recipes-button"></app-button-stub>
 </div>"
 `;

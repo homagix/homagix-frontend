@@ -1,11 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`RegisterPage > should render 1`] = `
-"<h2 class=\\"title is-4\\">Neu registrieren</h2>
+"<h2 class="title is-4">Neu registrieren</h2>
 <p> Hier kannst du deinem Zugang einen Namen (z.B. deinen Vornamen oder auch einen Phantasienamen) geben. Wir sprechen dich dann künftig damit an. </p>
-<label> Name <input type=\\"text\\"></label>
-<div class=\\"button-list\\">
-  <app-button-stub id=\\"register-button\\"></app-button-stub>
-  <app-button-stub id=\\"cancel-button\\"></app-button-stub>
+<label> Name <input type="text"></label>
+<div class="button-list">
+  <app-button-stub id="register-button"></app-button-stub>
+  <app-button-stub id="cancel-button"></app-button-stub>
 </div>"
 `;

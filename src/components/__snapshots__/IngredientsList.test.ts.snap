@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`IngredientsList > should render a list with an editable item and with a new item 1`] = `"<div data-v-973b5ae8=\\"\\" class=\\"ingredient-list\\"><span data-v-973b5ae8=\\"\\">8</span><span data-v-973b5ae8=\\"\\">L</span><span data-v-973b5ae8=\\"\\">abc</span></div>"`;
+exports[`IngredientsList > should render a list with an editable item and with a new item 1`] = `"<div data-v-973b5ae8="" class="ingredient-list"><span data-v-973b5ae8="">8</span><span data-v-973b5ae8="">L</span><span data-v-973b5ae8="">abc</span></div>"`;
 
-exports[`IngredientsList > should render a list with an item 1`] = `"<div data-v-973b5ae8=\\"\\" class=\\"ingredient-list\\"><span data-v-973b5ae8=\\"\\">8</span><span data-v-973b5ae8=\\"\\">L</span><span data-v-973b5ae8=\\"\\">abc</span></div>"`;
+exports[`IngredientsList > should render a list with an item 1`] = `"<div data-v-973b5ae8="" class="ingredient-list"><span data-v-973b5ae8="">8</span><span data-v-973b5ae8="">L</span><span data-v-973b5ae8="">abc</span></div>"`;
 
-exports[`IngredientsList > should render an empty list 1`] = `"<div data-v-973b5ae8=\\"\\" class=\\"ingredient-list\\"></div>"`;
+exports[`IngredientsList > should render an empty list 1`] = `"<div data-v-973b5ae8="" class="ingredient-list"></div>"`;
