@@ -5,11 +5,11 @@ env:
   jest: true
 parser: vue-eslint-parser
 parserOptions:
-  ecmaVersion: 2020
+  ecmaVersion: 2023
   sourceType: module
   parser: "@typescript-eslint/parser"
 plugins:
   - "@typescript-eslint"
 extends:
-  - "plugin:vue/vue3-strongly-recommended"
+  - "plugin:vue/vue3-recommended"
   - "prettier"

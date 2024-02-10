@@ -19,8 +19,8 @@ const navbarClasses = computed(() => "navbar-menu" + (props.open ? " is-active" 
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <router-link to="/register" v-if="!store.state.user" class="button is-primary"> Registrieren </router-link>
-          <router-link to="/logout" v-else class="button is-light">Abmelden</router-link>
+          <router-link v-if="!store.state.user" to="/register" class="button is-primary"> Registrieren </router-link>
+          <router-link v-else to="/logout" class="button is-light">Abmelden</router-link>
         </div>
       </div>
     </div>

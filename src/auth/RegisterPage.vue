@@ -27,7 +27,7 @@ function cancel() {
   </p>
   <label>
     Name
-    <input type="text" v-model="name" />
+    <input v-model="name" type="text" />
   </label>
 
   <div class="button-list">

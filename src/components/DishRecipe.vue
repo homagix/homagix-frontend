@@ -107,10 +107,10 @@ async function save() {
     <img v-for="(img, index) in additionalImages" :key="index" :src="img" />
 
     <div class="buttons">
-      <AppButton icon="list" v-if="!editMode" @click="backToList">Zurück</AppButton>
-      <AppButton icon="xmark" v-if="editMode" @click="revert">Verwerfen</AppButton>
-      <AppButton icon="edit" v-if="dish.isEditable && !editMode" @click="edit">Bearbeiten</AppButton>
-      <AppButton icon="save" v-if="editMode" @click="save">Speichern</AppButton>
+      <AppButton v-if="!editMode" icon="list" @click="backToList">Zurück</AppButton>
+      <AppButton v-if="editMode" icon="xmark" @click="revert">Verwerfen</AppButton>
+      <AppButton v-if="dish.isEditable && !editMode" icon="edit" @click="edit">Bearbeiten</AppButton>
+      <AppButton v-if="editMode" icon="save" @click="save">Speichern</AppButton>
     </div>
   </section>
 </template>

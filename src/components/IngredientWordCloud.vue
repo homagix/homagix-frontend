@@ -61,7 +61,7 @@ watch(update, () => undefined)
     </a>
   </div>
 
-  <div class="wordcloud" ref="canvas" />
+  <div ref="canvas" class="wordcloud" />
 </template>
 
 <style>

@@ -58,7 +58,7 @@ function pathTo(path: string) {
   <div class="title is-4">
     Rezepte
 
-    <div class="filter" v-if="route.query.ingredient">
+    <div v-if="route.query.ingredient" class="filter">
       mit {{ route.query.ingredient }}
       <span class="remove" title="Filter entfernen" @click="removeFilter">
         <o-icon icon="remove" />
@@ -70,14 +70,14 @@ function pathTo(path: string) {
     </router-link>
   </div>
 
-  <div class="tabs is-boxed" v-if="store.state.user">
+  <div v-if="store.state.user" class="tabs is-boxed">
     <ul>
       <li :class="isActive('/recipes')"><router-link :to="pathTo('recipes')">Alle</router-link></li>
       <li :class="isActive('/favorites')"><router-link :to="pathTo('favorites')">Favoriten</router-link></li>
     </ul>
   </div>
 
-  <ul class="recipes-list" v-if="sortedDishes.length">
+  <ul v-if="sortedDishes.length" class="recipes-list">
     <li v-for="dish in sortedDishes" :key="dish.id" @click="() => activate(dish.id)">
       <o-icon icon="utensils"></o-icon> {{ dish.name }} <FavoriteButton :dish="dish" />
     </li>

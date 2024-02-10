@@ -17,7 +17,7 @@ const title = props.dish.isFavorite ? "Von der Favoritenliste entfernen" : "Zur 
 </script>
 
 <template>
-  <a href="#" class="favorite" @click.stop.prevent="toggleFavorite" :title="title"> {{ favorite }}</a>
+  <a href="#" class="favorite" :title="title" @click.stop.prevent="toggleFavorite"> {{ favorite }}</a>
 </template>
 
 <style lang="scss" scoped>
