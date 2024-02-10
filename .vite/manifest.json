@@ -1,20 +1,20 @@
 {
   "index.html": {
+    "file": "assets/index-qwdXC6gT.js",
+    "src": "index.html",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/mocks/browser.ts"
+    ],
+    "css": [
+      "assets/index-3dkgsdwg.css"
+    ],
     "assets": [
       "assets/fa-regular-400-DjrD39cY.woff2",
       "assets/fa-regular-400-TBaJECdl.ttf",
       "assets/fa-solid-900-wCNuHzbQ.woff2",
       "assets/fa-solid-900-zNLXiXYJ.ttf"
-    ],
-    "css": [
-      "assets/index-zN37pJTe.css"
-    ],
-    "dynamicImports": [
-      "src/mocks/browser.ts"
-    ],
-    "file": "assets/index-NETFbSB8.js",
-    "isEntry": true,
-    "src": "index.html"
+    ]
   },
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
     "file": "assets/fa-regular-400-TBaJECdl.ttf",
@@ -34,7 +34,7 @@
   },
   "src/mocks/browser.ts": {
     "file": "assets/browser-qmBFv39i.js",
-    "isDynamicEntry": true,
-    "src": "src/mocks/browser.ts"
+    "src": "src/mocks/browser.ts",
+    "isDynamicEntry": true
   }
 }
