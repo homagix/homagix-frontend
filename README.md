@@ -8,15 +8,15 @@ To do this in a more digital way, we created this repository to remember dishes,
 
 ## Program parts
 
-This is the frontend part of Homagix. It is most likely that you want to clone [the server part](https://github.com/jschirrmacher/homagix-server) as well.
+This is the frontend part of Homagix. It is most likely that you want to clone [the server part](https://github.com/homagix/homagix-server) as well.
 
 ## Adding recipes
 
-Dishes are stored in [the server](https://github.com/jschirrmacher/homagix-server). Either you use the one we run on <https://homagix-server.justso.de> and get the dishes we like, or you run your own server and can store your own. Have a look at the repo, to learn how.
+Dishes are stored in [the server](https://github.com/homagix/homagix-server). Either you use the one we run on <https://homagix-server.justso.de> and get the dishes we like, or you run your own server and can store your own. Have a look at the repo, to learn how.
 
 ## Install and run
 
-    git clone https://github.com/jschirrmacher/homagix-frontend.git
+    git clone https://github.com/homagix/homagix-frontend.git
     npm install --production
     npm build
     npm start
@@ -31,7 +31,7 @@ If you want to install a development version, use the following npm commands aft
 
 ## Use pre-installed version on GitHub Pages
 
-You can also use the [frontend in Github Pages](https://jschirrmacher.github.io/homagix-frontend/). However, you will still need a server backend where dishes are stored. By default, a sample server <https://homagix-server.justso.de> is used. To configure an own server, open the dev console in your browser and enter
+You can also use the [frontend in Github Pages](https://homagix.github.io/homagix-frontend/). However, you will still need a server backend where dishes are stored. By default, a sample server <https://homagix-server.justso.de> is used. To configure an own server, open the dev console in your browser and enter
 
     localStorage.setItem("basePath", "https://my-homagix-server.com:8200")
 
