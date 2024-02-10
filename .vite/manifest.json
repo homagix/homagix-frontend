@@ -1,13 +1,13 @@
 {
   "index.html": {
-    "file": "assets/index-qwdXC6gT.js",
+    "file": "assets/index-2xAGeWhj.js",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
       "src/mocks/browser.ts"
     ],
     "css": [
-      "assets/index-3dkgsdwg.css"
+      "assets/index-58LENADl.css"
     ],
     "assets": [
       "assets/fa-regular-400-DjrD39cY.woff2",
