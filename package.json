@@ -1,6 +1,7 @@
 {
   "name": "homagix-frontend",
   "version": "5.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "msw": "esbuild --platform=node --bundle src/msw.ts | node",
