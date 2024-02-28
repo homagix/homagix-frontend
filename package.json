@@ -26,7 +26,7 @@
     "vue": "3.4.20"
   },
   "devDependencies": {
-    "@types/node": "20.11.20",
+    "@types/node": "20.11.21",
     "@types/showdown": "2.0.6",
     "@typescript-eslint/eslint-plugin": "7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
@@ -41,7 +41,7 @@
     "eslint-plugin-vue": "9.22.0",
     "happy-dom": "^13.6.2",
     "jwt-decode": "4.0.0",
-    "msw": "^2.2.1",
+    "msw": "^2.2.2",
     "prettier": "3.2.5",
     "prettier-eslint": "16.3.0",
     "sass": "1.71.1",
