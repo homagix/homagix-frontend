@@ -23,13 +23,13 @@
     "@fortawesome/fontawesome-free": "6.5.2",
     "@oruga-ui/oruga-next": "0.8.8",
     "@oruga-ui/theme-bulma": "0.3.0",
-    "vue": "3.4.25"
+    "vue": "3.4.26"
   },
   "devDependencies": {
     "@types/node": "20.12.7",
     "@types/showdown": "2.0.6",
-    "@typescript-eslint/eslint-plugin": "7.7.1",
-    "@typescript-eslint/parser": "^7.7.1",
+    "@typescript-eslint/eslint-plugin": "7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
     "@vitejs/plugin-vue": "5.0.4",
     "@vitest/coverage-v8": "^1.5.2",
     "@vue/test-utils": "2.4.5",
@@ -50,7 +50,7 @@
     "vitest": "1.5.2",
     "vue-router": "4.3.2",
     "vue-showdown": "4.2.0",
-    "vue-tsc": "2.0.14",
+    "vue-tsc": "2.0.15",
     "vuex": "4.1.0",
     "wordcloud": "1.2.2"
   },
