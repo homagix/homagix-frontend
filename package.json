@@ -21,12 +21,12 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "6.5.2",
-    "@oruga-ui/oruga-next": "0.8.10",
+    "@oruga-ui/oruga-next": "0.8.11",
     "@oruga-ui/theme-bulma": "0.3.0",
     "vue": "3.4.27"
   },
   "devDependencies": {
-    "@types/node": "20.14.1",
+    "@types/node": "20.14.2",
     "@types/showdown": "2.0.6",
     "@typescript-eslint/eslint-plugin": "7.12.0",
     "@typescript-eslint/parser": "^7.12.0",
@@ -42,7 +42,7 @@
     "happy-dom": "^14.12.0",
     "jwt-decode": "4.0.0",
     "msw": "^2.3.1",
-    "prettier": "3.3.0",
+    "prettier": "3.3.1",
     "prettier-eslint": "16.3.0",
     "sass": "1.77.4",
     "typescript": "5.4.5",
