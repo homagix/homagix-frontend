@@ -20,13 +20,13 @@
     "npm": ">=9.0.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "6.5.2",
+    "@fortawesome/fontawesome-free": "6.6.0",
     "@oruga-ui/oruga-next": "0.8.12",
     "@oruga-ui/theme-bulma": "0.3.0",
     "vue": "3.4.31"
   },
   "devDependencies": {
-    "@types/node": "20.14.10",
+    "@types/node": "20.14.11",
     "@types/showdown": "2.0.6",
     "@typescript-eslint/eslint-plugin": "7.16.1",
     "@typescript-eslint/parser": "^7.16.1",
@@ -46,7 +46,7 @@
     "prettier-eslint": "16.3.0",
     "sass": "1.77.8",
     "typescript": "5.5.3",
-    "vite": "5.3.3",
+    "vite": "5.3.4",
     "vitest": "2.0.3",
     "vue-router": "4.4.0",
     "vue-showdown": "4.2.0",
