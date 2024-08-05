@@ -17,7 +17,7 @@
   },
   "engines": {
     "node": ">=20.0.0 <21.0.0",
-    "npm": ">=9.0.0"
+    "npm": ">=10.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "6.6.0",
@@ -26,7 +26,7 @@
     "vue": "3.4.35"
   },
   "devDependencies": {
-    "@types/node": "22.0.2",
+    "@types/node": "20.11.0",
     "@types/showdown": "2.0.6",
     "@typescript-eslint/eslint-plugin": "8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
