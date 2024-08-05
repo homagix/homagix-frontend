@@ -18,7 +18,7 @@ defineProps<{ ingredients: Ingredient[] }>()
 .ingredient-list {
   display: inline-grid;
   grid-template-rows: auto;
-  grid-template-columns: auto auto 1fr;
+  grid-template-columns: 1fr 1fr 6fr;
   border: 1px solid #888;
   padding: 3px;
   align-content: flex-start;
