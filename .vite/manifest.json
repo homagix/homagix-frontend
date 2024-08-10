@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index-Cqwvntpt.js",
+    "file": "assets/index-Do_fRPS6.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
@@ -34,7 +34,7 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
   },
   "src/mocks/browser.ts": {
-    "file": "assets/browser-Dh9GQKYY.js",
+    "file": "assets/browser-DMEPyx6W.js",
     "name": "browser",
     "src": "src/mocks/browser.ts",
     "isDynamicEntry": true
