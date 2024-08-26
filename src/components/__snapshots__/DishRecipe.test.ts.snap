@@ -8,7 +8,7 @@ exports[`DishRecipe > should render as expected 1`] = `
   <div data-v-6da79d3c="" class="image-ingredients">
     <div data-v-6da79d3c="" class="image-wrapper">
       <!--v-if-->
-      <div data-v-6da79d3c="" id="main-image" style="background-image: url(" https://homagix-server.justso.de/images/guacamole.jpg");"></div>
+      <div data-v-6da79d3c="" id="main-image" style="background-image: url(&quot;https://homagix-server.justso.de/images/guacamole.jpg&quot;);"></div>
     </div>
     <div data-v-6da79d3c="" class="ingredients-list-container">
       <p data-v-6da79d3c="" class="title is-6">Zutaten:</p>
