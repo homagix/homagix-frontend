@@ -1,12 +1,9 @@
 {
   "index.html": {
-    "file": "assets/index-Do_fRPS6.js",
+    "file": "assets/index-D9Op3LX9.js",
     "name": "index",
     "src": "index.html",
     "isEntry": true,
-    "dynamicImports": [
-      "src/mocks/browser.ts"
-    ],
     "css": [
       "assets/index-BLptu7Af.css"
     ],
@@ -32,11 +29,5 @@
   "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
     "file": "assets/fa-solid-900-DOQJEhcS.woff2",
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
-  },
-  "src/mocks/browser.ts": {
-    "file": "assets/browser-DMEPyx6W.js",
-    "name": "browser",
-    "src": "src/mocks/browser.ts",
-    "isDynamicEntry": true
   }
 }
