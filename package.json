@@ -12,7 +12,7 @@
     "test:coverage": "npm run test:unit -- --coverage",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "update": "npx -y npm-check-updates -d -u -e 2",
+    "update": "npx -y npm-check-updates -du",
     "postinstall": "msw init public --save"
   },
   "engines": {
